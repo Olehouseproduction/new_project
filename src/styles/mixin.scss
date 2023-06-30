@@ -1,0 +1,23 @@
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+@mixin flex($justify: normal, $align: normal, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+@mixin position(
+  $position,
+  $top: initial,
+  $bottom: initial,
+  $left: initial,
+  $right: initial
+) {
+  position: $position;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+}
