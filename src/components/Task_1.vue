@@ -38,7 +38,6 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
 }
-
 .main {
   display: grid;
   width: 50vw;

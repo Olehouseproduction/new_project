@@ -1,7 +1,5 @@
 <script setup>
-import { ref } from "vue";
 
-const count = ref(0);
 </script>
 
 <template>
@@ -13,7 +11,7 @@ const count = ref(0);
   </div>
 </template>
 
-<style lang="scss" scode>
+<style lang="scss" scoped>
 // Если мы хотим использовать наши заранее заготовленные mixin,
 // то их надо в начале добавить в этот тимплейт с помощью import
 @import "../styles/mixin.scss";
