@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <div class="main">
@@ -11,7 +9,7 @@
   </div>
 </template>
 
-<style lang="scss" scode>
+<style lang="scss" scoped>
 // Если мы хотим использовать наши заранее заготовленные mixin,
 // то их надо в начале добавить в этот тимплейт с помощью import
 @import "../styles/mixin.scss";

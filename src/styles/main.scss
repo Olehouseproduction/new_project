@@ -2,9 +2,13 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   background: #1b2631;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &.grabbing * {
     cursor: grabbing !important;
   }

@@ -20,21 +20,20 @@ const count = ref(0);
 
 <style lang="scss" scoped>
 @import "../styles/mixin.scss";
-//Стили body не подгружаются
 .main {
   background: #1b2631;
-  @include size(100vw, 100vh); 
+  @include size(100vw, 100vh);
   margin: 0 auto;
   @include flex(center, center, column);
   position: relative;
-  .button-rout{
+  .button-rout {
     background-color: white;
-    &:hover{
+    &:hover {
       transform: scale(2);
     }
   }
-  div{
-    .button-rout{
+  div {
+    .button-rout {
       background-color: darkolivegreen;
     }
   }
