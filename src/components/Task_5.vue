@@ -1,10 +1,15 @@
-<script setup></script>
+<script setup>
+import Button_link from "../components/ui-componets/button_link.vue"
+</script>
 
 <template>
   <div class="main">
     <h1>Game</h1>
     <!-- Кнопка назад! -->
-    <router-link class="button-rout" to="/">Назад</router-link>
+    <Button_link
+    :to="'/'"
+    :name="'Назад'"
+    />
     <!-- //Кнопка назад! -->
   </div>
 </template>

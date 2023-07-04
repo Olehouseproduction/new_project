@@ -1,13 +1,37 @@
 <script setup>
-
+  import Button_link from "../components/ui-componets/button_link.vue"
+  import Button_task from "../components/ui-componets/button_task.vue"
+  const tasks = [
+    {name:'Последний становится красным'},
+    {name:'Первый и четвертый становятся зелеными'},
+    {name:'Отменяет действие второго и первый пульсирует'},
+    {name:'Отменяет действия первого и третий становится зеленым'},
+    {name:'Отменяет все и красит всех в розовый'},
+    {name:'Меняет цвет задника'},
+    {name:'Делает рандомного синим'},
+    {name:'Добавлет пульсацию рандомному'},
+    {name:'Делает невидимым рандомного'},
+  ]
 </script>
 
 <template>
   <div class="main">
     <h1>Смена классов</h1>
     <!-- Кнопка назад! -->
-    <router-link class="button-rout" to="/">Назад</router-link>
+    <Button_link
+    :to="'/'"
+    :name="'Назад'"
+    />
     <!-- //Кнопка назад! -->
+    <!-- Дальше добавляем наши кнопки 
+    так как они повторяются так же добавляем их через v-for 
+    -->
+    <div class="workspace-task-3">
+      <Button_task v-for="task, i in tasks"
+      :key="'tesk' + i"
+      :name="task.name"
+      />
+    </div>
   </div>
 </template>
 
@@ -23,5 +47,10 @@
 }
 .button-rout {
   @include position(absolute, $top: 5vh, $right: 5vw);
+}
+.workspace-task-3{
+  @include size(70%, 50%);
+  @include flex(space-around, center);
+  margin: 0 auto;
 }
 </style>
