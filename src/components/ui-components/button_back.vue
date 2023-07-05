@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../styles/mixin.scss";
+@import "src/styles/mixin.scss";
 .button-rout--back {
   background-color: #f1f1f1;
   color: black;

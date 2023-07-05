@@ -1,45 +1,39 @@
 <script setup></script>
 
 <template>
-  <main>
-    <div class="container">
-      <div class="plant">
-        <img src="../img/1.jpg" alt="plant on the tree" />
-      </div>
-      <div class="dog">
-        <img src="../img/2.jpg" alt="dog in the grass" />
-      </div>
-      <div class="bike">
-        <img src="../img/3.jpg" alt="bike in the forest" />
-      </div>
-      <div class="chamomile">
-        <img src="../img/4.jpg" alt="forest chamomile" />
-      </div>
-      <div class="mountains">
-        <img src="../img/5.jpg" alt="мountain landscape" />
-      </div>
-      <div class="grass">
-        <img src="../img/6.jpg" alt="grass" />
-      </div>
-      <div class="sheet">
-        <img src="../img/7.jpg" alt="raindrops" />
-      </div>
-      <div class="stones">
-        <img src="../img/8.jpg" alt="river stones" />
-      </div>
-      <div class="dachshund">
-        <img src="../img/9.jpg" alt="dog with ball" />
-      </div>
+  <div class="container">
+    <div class="plant">
+      <img src="../../assets/image/1.jpg" alt="plant on the tree" />
     </div>
-  </main>
+    <div class="dog">
+      <!-- <img src="../../assets/image/2.jpg" alt="dog in the grass" /> -->
+    </div>
+    <div class="bike">
+      <img src="../../assets/image/3.jpg" alt="bike in the forest" />
+    </div>
+    <div class="chamomile">
+      <img src="../../assets/image/4.jpg" alt="forest chamomile" />
+    </div>
+    <div class="mountains">
+      <img src="../../assets/image/5.jpg" alt="мountain landscape" />
+    </div>
+    <div class="grass">
+      <img src="../../assets/image/6.jpg" alt="grass" />
+    </div>
+    <div class="sheet">
+      <img src="../../assets/image/7.jpg" alt="raindrops" />
+    </div>
+    <div class="stones">
+      <img src="../../assets/image/8.jpg" alt="river stones" />
+    </div>
+    <div class="dachshund">
+      <img src="../../assets/image/9.jpg" alt="dog with ball" />
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-@import "../styles/mixin.scss";
-.main {
-  @include size(50vw, 80vh);
-  margin: 0 auto;
-}
+@import "src/styles/mixin.scss";
 
 .container {
   display: grid;
@@ -72,6 +66,7 @@
 }
 
 .dog {
+  background-image: url("../../assets/image/2.jpg");
   grid-column: 1;
   grid-row: 1/2;
   @include size(580px, 868px);
@@ -153,4 +148,12 @@
 .dachshund img {
   margin-left: 30px;
 }
+
+
+// .block-1{
+//   200px = 200px
+// }
+// .block-2{
+//   300px = 100px 
+// }
 </style>

@@ -1,3 +1,4 @@
+@import "./mixin.scss";
 body {
   height: 100%;
   width: 100%;
@@ -14,23 +15,7 @@ body {
   }
 }
 
-h1 {
+.name_task {
   color: white;
   text-align: center;
-}
-
-.button-rout--back {
-  // @include position(absolute, $top: 5vh, $right: 5vw);
-  //не получается вставить миксин. [Undefined mixin]
-
-  background-color: #f1f1f1;
-  color: black;
-  position: absolute;
-  margin-top: 5vh;
-  margin-right: 2vw;
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 6%;
-  font-weight: 600;
 }
