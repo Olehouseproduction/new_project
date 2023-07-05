@@ -9,7 +9,7 @@ const links = [
   {url: "/task_3", name: "Задание #3"},
   {url: "/task_4", name: "Задание #4"},
   {url: "/task_5", name: "Задание #5"},
-  {url: "/task_5", name: "Задание #5"},
+  {url: "/task_5", name: "Задание #6"},
 ]
 </script>
 

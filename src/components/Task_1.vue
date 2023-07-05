@@ -20,6 +20,7 @@
         <div class="extra">extra</div>
         <div class="image">image</div>
       </div>
+
     </section>
   </div>
 </template>

@@ -2,13 +2,14 @@
 import { ref } from "vue";
 const props = defineProps({
     url: String,
-    name: String
+    name: String,
 })
 const count = ref(0);
 </script>
 
 <template>
     <router-link class="button-rout" :to="props.url">{{ props.name }}</router-link>
+    <!-- <router-link class="button-rout" to="/task_1">Задание №1</router-link> -->
 </template>
 
 <style lang="scss" scoped>
