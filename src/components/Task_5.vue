@@ -4,7 +4,7 @@
   <div class="main">
     <h1>Game</h1>
     <!-- Кнопка назад! -->
-    <router-link class="button-rout" to="/">Назад</router-link>
+    <router-link class="button-rout--back" to="/">&laquo; Назад</router-link>
     <!-- //Кнопка назад! -->
   </div>
 </template>

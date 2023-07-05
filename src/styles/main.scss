@@ -5,11 +5,32 @@ body {
   margin: 0 auto;
   padding: 0;
   background: #1b2631;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // box-sizing: border-box;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   &.grabbing * {
     cursor: grabbing !important;
   }
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.button-rout--back {
+  // @include position(absolute, $top: 5vh, $right: 5vw);
+  //не получается вставить миксин. [Undefined mixin]
+
+  background-color: #f1f1f1;
+  color: black;
+  position: absolute;
+  margin-top: 5vh;
+  margin-right: 2vw;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6%;
+  font-weight: 600;
 }
