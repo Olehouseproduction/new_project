@@ -35,7 +35,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../styles/mixin.scss";
+@import "src/styles/mixin.scss";
 .main {
   @include size(50vw, 80vh);
   margin: 0 auto;

@@ -1,10 +1,12 @@
-<script setup></script>
+<script setup>
+import button_back from "./ui-components/button_back.vue";
+</script>
 
 <template>
   <div class="main">
     <h1>Наслоение</h1>
     <!-- Кнопка назад! -->
-    <router-link class="button-rout--back" to="/">&laquo; Назад</router-link>
+    <button_back />
     <!-- //Кнопка назад! -->
   </div>
 </template>
@@ -18,8 +20,5 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-}
-.button-rout {
-  @include position(absolute, $top: 5vh, $right: 5vw);
 }
 </style>

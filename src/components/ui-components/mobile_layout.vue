@@ -18,7 +18,7 @@
   </div>
 </template>
 <style lang="scss" scoped>
-@import "../styles/mixin.scss";
+@import "src/styles/mixin.scss";
 
 .main {
   font-family: Verdana, Geneva, Tahoma, sans-serif;

@@ -20,7 +20,7 @@
 <style lang="scss" scoped>
 // Если мы хотим использовать наши заранее заготовленные mixin,
 // то их надо в начале добавить в этот тимплейт с помощью import
-@import "../styles/mixin.scss";
+@import "src/styles/mixin.scss";
 .main {
   width: 50vw;
   height: 80vh;

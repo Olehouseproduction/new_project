@@ -1,12 +1,16 @@
 <script setup>
-// import button_back from "./ui-components/button_back.vue";
+import button_back from "./ui-components/button_back.vue";
+import nature from "./ui-components/nature_layout.vue";
+import tablet from "./ui-components/tablet_layout.vue";
 </script>
 
 <template>
   <div class="main">
     <h1>Позиционирование</h1>
+    <button_back />
+    <nature />
+    <tablet />
 
-    <router-link class="button-rout--back" to="/">&laquo; Назад</router-link>
     <!--desctop_layout-->
     <div class="wrapper">
       <div class="header">header</div>
@@ -21,8 +25,6 @@
 </template>
 
 <style lang="scss" scoped>
-// Если мы хотим использовать наши заранее заготовленные mixin,
-// то их надо в начале добавить в этот тимплейт с помощью import
 @import "../styles/mixin.scss";
 
 .main {
@@ -85,9 +87,5 @@
 .banner {
   background-color: #fed269;
   grid-column: 1/5;
-}
-
-.button-rout--back {
-  @include position(absolute, $top: 5vh, $right: 5vw);
 }
 </style>
