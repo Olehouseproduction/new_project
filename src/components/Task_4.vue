@@ -4,7 +4,7 @@ import button_back from "./ui-components/button_back.vue";
 
 <template>
   <div class="main">
-    <h1>Props</h1>
+    <h1 class="name_task">Props</h1>
 
     <button_back />
   </div>

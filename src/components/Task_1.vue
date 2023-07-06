@@ -1,91 +1,59 @@
 <script setup>
 import button_back from "./ui-components/button_back.vue";
-import nature from "./ui-components/nature_layout.vue";
+import mobile from "./ui-components/mobile_layout.vue";
 import tablet from "./ui-components/tablet_layout.vue";
+import desktop from "./ui-components/desktop_layout.vue";
+import nature from "./ui-components/nature_layout.vue";
 </script>
 
 <template>
   <div class="main">
-    <h1>Позиционирование</h1>
-    <button_back />
-    <nature />
-    <tablet />
-
-    <!--desctop_layout-->
-    <div class="wrapper">
-      <div class="header">header</div>
-      <div class="menu">menu</div>
-      <div class="hero">hero</div>
-      <div class="main1">main</div>
-      <div class="banner">banner</div>
-      <div class="extra">extra</div>
-      <div class="image">image</div>
+    <h1 class="name_task">Позиционирование</h1>
+    <div class="work-space--task1">
+      <button_back />
+      <button class="btn_transform">Нажми</button>
+      <section class="color_blocks">
+        <mobile />
+        <tablet />
+        <desktop />
+      </section>
+      <section class="naturе">
+        <nature />
+      </section>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import "../styles/mixin.scss";
-
 .main {
-  width: 50vw;
-  height: 50vh;
-  font-family: Verdana, Tahoma, sans-serif;
   margin: 0 auto;
   box-sizing: border-box;
-}
 
-.wrapper {
-  grid-template-columns: 147px 147px 147px 147px;
-  grid-template-rows: 41px 243px 80px 80px 80px;
-  display: grid;
-  & > div {
-    @include flex(center, center);
+  .work-space--task1 {
+    @include size(100vw, 100vh);
+    overflow-y: scroll;
   }
-  justify-content: center;
-  text-align: center;
-  text-transform: uppercase;
-}
 
-.header {
-  background-color: #17112b;
-  color: white;
-  grid-column: 1/2;
-}
+  .color_blocks {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 9vh;
+    text-transform: uppercase;
+  }
 
-.menu {
-  background-color: #ee3c52;
-  color: white;
-  grid-column: 2/5;
-}
+  .btn_transform {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+  }
 
-.hero {
-  background-color: #4c86c6;
-  color: white;
-  grid-column: 1/5;
-}
-
-.main1 {
-  background-color: #24344b;
-  color: white;
-  grid-column: 1/3;
-  grid-row: 3/5;
-}
-
-.image {
-  background-color: #c1e4e6;
-  grid-column: 4/5;
-  grid-row: 3/4;
-}
-
-.extra {
-  background-color: #4dbd97;
-  grid-row: 4;
-  grid-column: 4/5;
-}
-
-.banner {
-  background-color: #fed269;
-  grid-column: 1/5;
+  // .nature {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   width: 50%;
+  // }
 }
 </style>

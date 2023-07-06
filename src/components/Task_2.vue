@@ -4,7 +4,7 @@ import button_back from "./ui-components/button_back.vue";
 
 <template>
   <div class="main">
-    <h1>Наслоение</h1>
+    <h1 class="name_task">Наслоение</h1>
     <!-- Кнопка назад! -->
     <button_back />
     <!-- //Кнопка назад! -->
