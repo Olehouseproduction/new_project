@@ -2,10 +2,10 @@
 
 <template class="unit">
   <section class="blocks">
-    <div class="header">header</div>
-    <div class="menu">menu</div>
-    <div class="hero">hero</div>
-    <div class="main1">main</div>
+    <div class="header font">header</div>
+    <div class="menu font">menu</div>
+    <div class="hero font">hero</div>
+    <div class="main1 font">main</div>
     <div class="banner">banner</div>
     <div class="extra">extra</div>
     <div class="image">image</div>
@@ -16,35 +16,31 @@
 
 .blocks {
   grid-template-columns: 7.5vw;
-  grid-template-rows: 43px 43px 100px 100px 80px 80px 80px;
+  grid-template-rows: 4.5vh 4.5vh 12vh 12vh 8vh 8vh 8vh;
   display: grid;
   & > div {
     @include flex(center, center);
   }
 }
 
-h1 {
+.font {
   color: white;
-  text-align: center;
 }
+
 .header {
   background-color: #17112b;
-  color: white;
 }
 
 .menu {
   background-color: #ee3c52;
-  color: white;
 }
 
 .hero {
   background-color: #4c86c6;
-  color: white;
 }
 
 .main1 {
   background-color: #24344b;
-  color: white;
 }
 
 .image {

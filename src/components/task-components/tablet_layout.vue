@@ -2,10 +2,10 @@
 
 <template class="unit">
   <div class="wrap">
-    <div class="header">header</div>
-    <div class="menu">menu</div>
-    <div class="hero">hero</div>
-    <div class="main1">main</div>
+    <div class="header font">header</div>
+    <div class="menu font">menu</div>
+    <div class="hero font">hero</div>
+    <div class="main1 font">main</div>
     <div class="banner">banner</div>
     <div class="extra">extra</div>
     <div class="image">image</div>
@@ -13,13 +13,11 @@
 </template>
 
 <style lang="scss" scoped>
-// Если мы хотим использовать наши заранее заготовленные mixin,
-// то их надо в начале добавить в этот тимплейт с помощью import
 @import "src/styles/mixin.scss";
 
 .wrap {
-  grid-template-columns: 92px 184px 97px;
-  grid-template-rows: 41px 162px 162px 80px 82px;
+  grid-template-columns: 6vh 9.4vw 6vw;
+  grid-template-rows: 4.5vh 18.3vh 17.1vh 9vh 8vh;
   display: grid;
 }
 
@@ -29,33 +27,31 @@
   align-items: center;
 }
 
-h1 {
-  color: white;
-  text-align: center;
-}
-
 .header {
   background-color: #17112b;
-  color: white;
+  // color: white;
   grid-column: 1/4;
+}
+
+.font {
+  color: white;
 }
 
 .menu {
   background-color: #ee3c52;
-  color: white;
   grid-row: 3/6;
   grid-column: 1;
 }
 
 .hero {
   background-color: #4c86c6;
-  color: white;
+
   grid-column: 1/4;
 }
 
 .main1 {
   background-color: #24344b;
-  color: white;
+
   grid-column: 2/4;
 }
 

@@ -1,10 +1,10 @@
 <script setup></script>
 <template class="unit">
   <div class="wrapper">
-    <div class="header">header</div>
-    <div class="menu">menu</div>
-    <div class="hero">hero</div>
-    <div class="main1">main</div>
+    <div class="header font">header</div>
+    <div class="menu font">menu</div>
+    <div class="hero font">hero</div>
+    <div class="main1 font">main</div>
     <div class="banner">banner</div>
     <div class="extra">extra</div>
     <div class="image">image</div>
@@ -15,42 +15,36 @@
 @import "src/styles/mixin.scss";
 
 .wrapper {
-  grid-template-columns: 147px 147px 147px 147px;
-  grid-template-rows: 43px 243px 80px 80px 80px;
+  grid-template-columns: 7.5vw 7.5vw 7.5vw 7.5vw;
+  grid-template-rows: 5.5vh 26vh 8.5vh 8.5vh 8.5vh;
   display: grid;
   & > div {
     @include flex(center, center);
   }
-
   text-align: center;
-  & > .header {
-    background-color: #17112b;
-    color: white;
-    grid-column: 1/2;
-  }
 }
 
-// .header {
-//   background-color: #17112b;
-//   color: white;
-//   grid-column: 1/2;
-// }
+.font {
+  color: white;
+}
+
+.header {
+  background-color: #17112b;
+  grid-column: 1/2;
+}
 
 .menu {
   background-color: #ee3c52;
-  color: white;
   grid-column: 2/5;
 }
 
 .hero {
   background-color: #4c86c6;
-  color: white;
   grid-column: 1/5;
 }
 
 .main1 {
   background-color: #24344b;
-  color: white;
   grid-column: 1/3;
   grid-row: 3/5;
 }

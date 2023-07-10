@@ -1,22 +1,51 @@
 <script setup>
-// import button_link from "./ui-components/button_link.vue";
+// Импортим компонент
+
+import button_link from "./ui-components/button_link.vue";
+
+//Cоздаем массив объектов с ключами url и name
+
+const links = [
+  { url: "/Task_1", name: "Задание 1" },
+  { url: "/Task_2", name: "Задание 2" },
+  { url: "/Task_3", name: "Задание 3" },
+  { url: "/Task_4", name: "Задание 4" },
+  { url: "/Task_5", name: "Задание 5" },
+];
 </script>
 
 <template>
   <div class="main">
-    <!-- <button_link /> -->
-    <router-link class="button-rout" to="/task_1">Задание 1</router-link>
-    <router-link class="button-rout" to="/task_2">Задание 2</router-link>
-    <router-link class="button-rout" to="/task_3">Задание 3</router-link>
-    <router-link class="button-rout" to="/task_4">Задание 4</router-link>
-    <router-link class="button-rout" to="/task_5">Задание 5</router-link>
-  </div>
+    <video autoplay muted loop id="myVideo">
+      <source
+        src="../assets/video/daisy-stock-h264-video.mp4"
+        type="video/mp4" />
+    </video>
+    <button_link
+      v-for="(link, i) in links"
+      :key="'link' + i"
+      :to="link.url"
+      :name="link.name" />
+    <!-- Указываем пропсы. Чем они являются? 
+:to="link.url" Из массива из каждого элемента, который link, мы брали ключ url и отправляли его в :to. Также с name
+-->
+
+    <!-- 1. v-for - это цикл, позволяющий перебирать объекты; 
+  link - название может быть любым;
+  i - количество итераций; 
+  in links - указывает куда надо смотреть (в массив links ); 
+  Благодаря этому, если в массив будут добавляться объекты, количество кнопок будет автоматически увеличиваться и наоборот.
+  :key - уникальный идентификатор к каждой строке массива (к каждому элементу)
+   :key="'link' + i" - каждая кнопка будет вести к первому заданию. Но нам нужно, чтобы использовались ключи, указанные в массиве.
+   Возвращаемся в компонент button-link и прописываем prop'ы.
+  --></div>
 </template>
 
 <style lang="scss" scoped>
-@import "../styles/mixin.scss";
+@import "src/styles/mixin.scss";
 .main {
-  background-image: url("../assets/image/daisy.jpg");
+  // background-image: url("../assets/image/daisy.jpg");
+  // background-repeat: round;
   @include size(100vw, 100vh);
   margin: 0 auto;
   display: flex;
@@ -24,25 +53,7 @@
   text-align: center;
   justify-content: center;
 }
-
-.button-rout {
-  border-radius: 0px 10px 10px 0px;
-  box-shadow: 10px 5px 5px #0a0907;
-  // margin-left: 10vw;
-  width: 15%;
-  top: 40%;
-  font-family: "Open Sans", sans-serif;
-  background-color: #ffe42c;
-  padding: 28px;
-  z-index: 999;
-  font-size: 2em;
-  font-weight: 700;
-  text-decoration: none;
-  margin-top: 6vh;
-  color: #333;
-  &:hover {
-    transform: scale(1.2);
-    transition: 0.5s;
-  }
+#myVideo {
+  @include position($position: fixed, $right: 0, $bottom: 0);
 }
 </style>
