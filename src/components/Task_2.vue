@@ -27,7 +27,6 @@ const gallery = [
         :key="'elem' + i"
         :class="elem.type"
         :src="elem.url" />
-
     </div>
   </div>
 </template>
@@ -39,11 +38,11 @@ const gallery = [
   margin: 0 auto;
   box-sizing: border-box;
   @include size(100%, 100%);
-
-  .work-space--2 {
-    @include size(100vw, 100vh);
-    @include flex(center, center);
-    overflow-y: scroll;
-  }
+}
+.work-space--2 {
+  //   @include size(100vw, 100vh);
+  //   @include flex(center, center);
+  //   overflow-y: scroll;
+  // }
 }
 </style>

@@ -22,14 +22,11 @@
 }
 
 .wrap > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex(center, center);
 }
 
 .header {
   background-color: #17112b;
-  // color: white;
   grid-column: 1/4;
 }
 
@@ -45,13 +42,11 @@
 
 .hero {
   background-color: #4c86c6;
-
   grid-column: 1/4;
 }
 
 .main1 {
   background-color: #24344b;
-
   grid-column: 2/4;
 }
 

@@ -29,84 +29,86 @@ const gallery = [
 <style lang="scss" scoped>
 @import "src/styles/mixin.scss";
 
-// .container {
-//   margin-top: 10vh;
-//   display: grid;
-//   grid-template-columns: 34.25em 26em 25em 28.5em 36.2em;
-//   grid-template-rows: 25em 20em 25em;
-//   grid-gap: 0.6em;
-//   justify-content: center;
+.container {
+  margin-top: 10vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 0.6em;
+  height: 800px;
+  justify-content: center;
 
-//   & div {
-//     background-size: contain;
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     // @include size(100%, 100%);
-//     object-fit: contain;
-//     filter: drop-shadow(1em 1em 1.25em #ededed);
-//   }
-// }
+  div {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    // @include size(100%, 100%);
+    object-fit: contain;
+    filter: drop-shadow(1em 1em 1.25em #ededed);
+    border: 1px solid red;
+  }
+}
 
-// .plant {
-//   background-image: url("../../assets/image/1.jpg");
-//   grid-column: 5;
-//   grid-row: 1/3;
-//   @include size(36em, 54em);
-// }
+.plant {
+  background-image: url("../../assets/image/1.jpg");
+  grid-column: 5;
+  grid-row: 1/3;
+  // @include size(36em, 54em);
+}
 
-// .dog {
-//   background-image: url("../../assets/image/2.jpg");
-//   grid-column: 1;
-//   grid-row: 1/2;
-//   @include size(36em, 54em);
-// }
+.dog {
+  background-image: url("../../assets/image/2.jpg");
+  grid-column: 1;
+  grid-row: 1/2;
+  // @include size(36em, 54em);
+}
 
-// .bike {
-//   background-image: url("../../assets/image/3.jpg");
-//   grid-column: 4;
-//   grid-row: 1;
-//   @include size(28.5em, 18.7em);
-//   margin-top: 3.5vh;
-// }
+.bike {
+  background-image: url("../../assets/image/3.jpg");
+  grid-column: 4;
+  grid-row: 1;
+  // @include size(28.5em, 18.7em);
+  // margin-top: 3.5vh;
+}
 
-// .chamomile {
-//   background-image: url("../../assets/image/4.jpg");
-//   grid-column: 2;
-//   @include size(25em);
-// }
+.chamomile {
+  background-image: url("../../assets/image/4.jpg");
+  grid-column: 2;
+  // @include size(25em);
+}
 
-// .mountains {
-//   background-image: url("../../assets/image/5.jpg");
-//   grid-column: 3/4;
-//   grid-row: 2;
-//   @include size(57.6em, 20em);
-// }
+.mountains {
+  background-image: url("../../assets/image/5.jpg");
+  grid-column: 3/4;
+  grid-row: 2;
+  // @include size(57.6em, 20em);
+}
 
-// .grass {
-//   background-image: url("../../assets/image/6.jpg");
-//   grid-column: 3;
-//   grid-row: 1;
-//   @include size(25em);
-// }
+.grass {
+  background-image: url("../../assets/image/6.jpg");
+  grid-column: 3;
+  grid-row: 1;
+  // @include size(25em);
+}
 
-// .sheet {
-//   background-image: url("../../assets/image/7.jpg");
-//   grid-column: 4;
-//   grid-row: 3;
-//   @include size(28.5em, 18.7em);
-// }
+.sheet {
+  background-image: url("../../assets/image/7.jpg");
+  grid-column: 4;
+  grid-row: 3;
+  // @include size(28.5em, 18.7em);
+}
 
-// .stones {
-//   background-image: url("../../assets/image/8.jpg");
-//   grid-column: 2;
-//   grid-row: 2/3;
-//   @include size(36em, 54em);
-// }
+.stones {
+  background-image: url("../../assets/image/8.jpg");
+  grid-column: 2;
+  grid-row: 2/3;
+  // @include size(36em, 54em);
+}
 
-// .dachshund {
-//   background-image: url("../../assets/image/9.jpg");
-//   grid-column: 3;
-//   grid-row: 3;
-//   @include size(25em);
-// }
+.dachshund {
+  background-image: url("../../assets/image/9.jpg");
+  grid-column: 3;
+  grid-row: 3;
+  // @include size(25em);
+}
 </style>

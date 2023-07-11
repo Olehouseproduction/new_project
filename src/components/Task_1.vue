@@ -21,9 +21,8 @@ import nature from "./task-components/nature_layout.vue";
         <tablet />
         <desktop />
       </section>
-      <section class="naturе">
-        <nature />
-      </section>
+
+      <nature />
     </div>
   </div>
 </template>
@@ -33,12 +32,12 @@ import nature from "./task-components/nature_layout.vue";
 .main {
   margin: 0 auto;
   box-sizing: border-box;
-  @include size(100%, 100%);
+  // @include size(100%, 100%);
 
-  .work-space--task1 {
-    @include size(100vw, 100vh);
-    overflow-y: scroll;
-  }
+  // .work-space--task1 {
+  //   @include size(100vw, 100vh);
+  //   overflow-y: scroll;
+  // }
 
   .buttons {
     display: flex;
@@ -54,9 +53,7 @@ import nature from "./task-components/nature_layout.vue";
   }
 
   .btn_transform {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center);
     @include size(6rem);
     border-radius: 50%;
     font-weight: 600;

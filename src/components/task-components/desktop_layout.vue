@@ -21,7 +21,6 @@
   & > div {
     @include flex(center, center);
   }
-  text-align: center;
 }
 
 .font {

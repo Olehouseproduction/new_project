@@ -16,11 +16,10 @@ const links = [
 
 <template>
   <div class="main">
-    <video autoplay muted loop id="myVideo">
-      <source
-        src="../assets/video/daisy-stock-h264-video.mp4"
-        type="video/mp4" />
+    <video autoplay loop id="myVideo">
+      <source src="../assets/video/daisy-stock-h264-video.mp4" />
     </video>
+
     <button_link
       v-for="(link, i) in links"
       :key="'link' + i"
@@ -44,14 +43,10 @@ const links = [
 <style lang="scss" scoped>
 @import "src/styles/mixin.scss";
 .main {
-  // background-image: url("../assets/image/daisy.jpg");
-  // background-repeat: round;
   @include size(100vw, 100vh);
+  @include flex(center, normal, column);
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
+  text-align: right;
 }
 #myVideo {
   @include position($position: fixed, $right: 0, $bottom: 0);
