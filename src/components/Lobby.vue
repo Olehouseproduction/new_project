@@ -1,8 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import Button_link from "../components/ui-componets/button_link.vue"
-
-const count = ref(0);
 const links = [
   {url: "/task_1", name: "Задание #1"},
   {url: "/task_2", name: "Задание #2"},

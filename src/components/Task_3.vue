@@ -1,4 +1,5 @@
 <script setup>
+  import { ref, onMounted } from "vue";
   import Button_link from "../components/ui-componets/button_link.vue"
   import Button_task from "../components/ui-componets/button_task.vue"
   const tasks = [
@@ -12,11 +13,23 @@
     {name:'Добавлет пульсацию рандомному'},
     {name:'Делает невидимым рандомного'},
   ]
+  
+  let elemTest = ref(null);
+  console.log(elemTest.value)
+  onMounted(( ) => {
+    console.log(elemTest.value)
+    elemTest.value.classList.add("active")
+  })
+  window.local = {}
+  local.elem = elemTest
+
 </script>
+
 
 <template>
   <div class="main">
-    <h1>Смена классов</h1>
+    <h1 class="test" ref="elemTest">Смена классов</h1>
+
     <!-- Кнопка назад! -->
     <Button_link
     :to="'/'"
@@ -54,3 +67,4 @@
   margin: 0 auto;
 }
 </style>
+
