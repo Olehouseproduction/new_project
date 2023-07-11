@@ -1,19 +1,10 @@
 @import "./mixin.scss";
 body {
-  // height: 100%;
-  // width: 100%;
-  // overflow: hidden;
+  @include size(100%);
   margin: 0 auto;
   padding: 0;
   background: #1b2631;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  // box-sizing: border-box;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  &.grabbing * {
-    cursor: grabbing !important;
-  }
 }
 
 .name_task {

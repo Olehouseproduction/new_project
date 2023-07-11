@@ -11,8 +11,7 @@ const props = defineProps({
 <template>
   <!-- <router-link class="button-rout" to="/task_1">name</router-link> -->
 
-  <!-- <router-link class="button-rout" to="/task_1">Задание 1</router-link> 
-  Это модицифицируется. Чтобы использовать переменные - мы меняем запись
+  <!--  Это модицифицируется. Чтобы использовать переменные - мы меняем запись
   Теперь мы можем обращаться к пропсам по ключу. После этого, нам надо указать эти пропсы в Lobby
   -->
   <router-link class="button-rout" :to="props.url">{{

@@ -61,11 +61,6 @@ import nature from "./task-components/nature_layout.vue";
     cursor: pointer;
     border: none;
 
-    // &:hover {
-    //   transform: scale(1.2);
-    //   transition: all 350ms ease-in;
-    // }
-
     background: linear-gradient(
       #ff3155 0%,
       #ff3155 25%,
