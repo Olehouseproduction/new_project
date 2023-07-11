@@ -7,8 +7,6 @@
     {url: "src/assets/image/2.jpg", type: "vert"},
     {url: "src/assets/image/2.jpg", type: "cube"},
     {url: "src/assets/image/2.jpg", type: "vert"},
-
-
   ]
 </script>
 
@@ -42,7 +40,7 @@
   height: 100vh;
 }
 .work-space--2{
-  @include size(100%, 100%);
+  @include size(100%);
   @include flex(center, center, column);
   overflow: scroll;
 }
