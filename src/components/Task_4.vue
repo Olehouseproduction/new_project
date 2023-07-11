@@ -1,6 +1,11 @@
 <script setup>
+import { ref } from "vue";
 import button_back from "./ui-components/button_back.vue";
 import btn_task from "./ui-components/btn-task.vue";
+
+let elemHtml = ref();
+
+console.log(elemHtml.value)
 
 const tasks = [
   { name: "Сброс" },
@@ -19,7 +24,7 @@ const tasks = [
 <template>
   <div class="main">
     <!-- <h1 class="name_task">Props</h1> -->
-    <h1 class="name_task">Смена классов (временно)</h1>
+    <h1 :ref="elemHtml" class="name_task">Смена классов (временно)</h1>
 
     <button_back />
 

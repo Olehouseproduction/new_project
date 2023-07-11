@@ -16,7 +16,9 @@ const props = defineProps({
 @import "./../../styles/mixin.scss";
 
 .btn-task {
-  @include size(10em, 9em);
+  @include size(10em, 9em); 
+  // продумывать редактирование текста и в всего остального
+  padding: 12px;
   @include flex(center, center);
   border-radius: 1.5em;
   margin-left: 1.5em;

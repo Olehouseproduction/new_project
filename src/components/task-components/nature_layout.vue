@@ -37,15 +37,14 @@ const gallery = [
   grid-gap: 1em;
   height: 48em;
   justify-content: center;
+  
+  // Стараться задавать унивальные индефикаторы 
 
   div {
     background-size: contain;
     background-repeat: no-repeat;
-    // background-position: center;
-    // @include size(100%, 100%);
     object-fit: contain;
     filter: drop-shadow(0.5em 0.5em 0.2em #d7e4f6);
-    // border: 1px solid red;
   }
 }
 
@@ -54,7 +53,6 @@ const gallery = [
   background-position: center;
   grid-column: 5;
   grid-row: 1/3;
-  // @include size(36em, 54em);
 }
 
 .dog {
@@ -62,7 +60,6 @@ const gallery = [
   grid-column: 1;
   grid-row: 1/3;
   background-position: bottom;
-  // @include size(36em, 54em);
 }
 
 .bike {
@@ -70,24 +67,19 @@ const gallery = [
   grid-column: 4;
   grid-row: 1;
   background-position: bottom;
-  // @include size(28.5em, 18.7em);
-  // margin-top: 3.5vh;
 }
 
 .chamomile {
   background-image: url("../../assets/image/4.jpg");
   grid-column: 2;
   background-position: center;
-  // @include size(25em);
 }
 
 .mountains {
   background-image: url("../../assets/image/5.jpg");
-  // grid-column: 3/4;
   grid-column: 3/5;
   background-position: center;
   grid-row: 2;
-  // @include size(57.6em, 20em);
 }
 
 .grass {
@@ -95,14 +87,12 @@ const gallery = [
   grid-column: 3;
   grid-row: 1;
   background-position: center;
-  // @include size(25em);
 }
 
 .sheet {
   background-image: url("../../assets/image/7.jpg");
   grid-column: 4;
   grid-row: 3;
-  // @include size(28.5em, 18.7em);
 }
 
 .stones {
@@ -110,7 +100,6 @@ const gallery = [
   grid-column: 2;
   grid-row: 2/4;
   background-position: top;
-  // @include size(36em, 54em);
 }
 
 .dachshund {
@@ -118,6 +107,5 @@ const gallery = [
   grid-column: 3;
   grid-row: 3;
   background-position: center;
-  // @include size(25em);
 }
 </style>

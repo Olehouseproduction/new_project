@@ -10,7 +10,7 @@ import nature from "./task-components/nature_layout.vue";
 <template>
   <div class="main">
     <h1 class="name_task">Позиционирование</h1>
-    <div class="work-space--task1">
+    <div class="work-space work-space--task1">
       <!-- <button_link :to="'/'" :name="'&laquo;Назад'" /> -->
       <section class="buttons">
         <button class="btn_transform">Кликни</button>
@@ -21,7 +21,6 @@ import nature from "./task-components/nature_layout.vue";
         <tablet />
         <desktop />
       </section>
-
       <nature />
     </div>
   </div>
