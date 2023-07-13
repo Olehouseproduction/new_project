@@ -5,13 +5,13 @@ import btn_task from "./ui-components/btn-task.vue";
 
 let elemHtml = ref();
 
-console.log(elemHtml.value)
+console.log(elemHtml.value);
 
 const tasks = [
   { name: "Сброс" },
   { name: "Последний становится красным" },
   { name: "Первый и четвертый становятся зелеными" },
-  { name: "Отменяет действия первого, и третий становится зеленым" },
+  { name: "Отменяет действие первого, и третий становится зеленым" },
   { name: "Отменяет действие второго, и первый пульсирует" },
   { name: "Меняет цвет задника" },
   { name: "Отменяет все и красит всех в розовый" },
@@ -23,12 +23,12 @@ const tasks = [
 
 <template>
   <div class="main">
-    <!-- <h1 class="name_task">Props</h1> -->
-    <h1 :ref="elemHtml" class="name_task">Смена классов (временно)</h1>
+    <!-- <h1 class="name_caption">Props</h1> -->
+    <h1 :ref="elemHtml" class="name_caption">Смена классов (временно)</h1>
 
     <button_back />
 
-    <div class="workspace-task-3">
+    <div class="workspace workspace--task4">
       <btn_task
         v-for="(task, i) in tasks"
         :key="'task' + i"
@@ -38,17 +38,11 @@ const tasks = [
 </template>
 
 <style lang="scss" scoped>
-// Если мы хотим использовать наши заранее заготовленные mixin,
-// то их надо в начале добавить в этот тимплейт с помощью import
 @import "../styles/mixin.scss";
 
-.main {
-  position: relative;
-  @include size(100vw, 100vh);
-}
-.workspace-task-3 {
+.workspace--task4 {
   @include size(70%, 50%);
   @include flex(space-around, center);
-  margin: 0 auto;
+  margin: 9% auto;
 }
 </style>

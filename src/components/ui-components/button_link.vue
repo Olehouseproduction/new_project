@@ -18,38 +18,25 @@ const props = defineProps({
 @import "./../../styles/mixin.scss";
 
 .button-rout {
-  // border-radius: 0 1.2em 1.2em 0;
-  border-radius: 0.2em;
-  box-shadow: #0a0907;
-  // можно использовать mixin 
-  // height: auto; fit-content;
-  width: 7em;
-  // Зачем тут используется свойство top
-  // top: 0.6em;
-  // необходимо завернуть в миксин 
-  font-family: "Open Sans", sans-serif;
-  font-size: 2em;
-  font-weight: 700;
-  text-decoration: none;
+  @include size(7.5em, 3.5em);
+  @include font(sans-serif, 1em, 700, none);
+  @include flex(center, center);
   background-color: #ffe42c;
+  color: #050038;
+  border-radius: 3px;
+  box-shadow: 10px 10px 20px #1641a0;
   padding: 1em;
-  z-index: 1;
-  margin-top: 6vh;
-  // опять пиксели 
-  margin-left: -50px;
-  color: #333;
-  // необходимо удалить
-  // animation-name: circle;
-  // animation-play-state: running;
-
-  // не забывать про обрастные трансформы в дефолтное состояние 
-  // избежать резких скачков
-
+  margin-top: 4vh;
   transition: all 350ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translateX(0px) scale(1);
+  text-align: center;
 
   &:hover {
-    transform: translateX(50px) scale(1.2);
+    transform: translateX(50px) scale(1.3);
+  }
+
+  &:nth-child(even):hover {
+    transform: translateX(-50px) scale(1.3);
   }
 }
 </style>

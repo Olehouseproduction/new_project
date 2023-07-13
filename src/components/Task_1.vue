@@ -9,13 +9,9 @@ import nature from "./task-components/nature_layout.vue";
 
 <template>
   <div class="main">
-    <h1 class="name_task">Позиционирование</h1>
-    <div class="work-space work-space--task1">
-      <!-- <button_link :to="'/'" :name="'&laquo;Назад'" /> -->
-      <section class="buttons">
-        <button class="btn_transform">Кликни</button>
-        <button_back />
-      </section>
+    <h1 class="name_caption">Позиционирование</h1>
+    <div class="workspace workspace--task1">
+      <button_back />
       <section class="color_blocks">
         <mobile />
         <tablet />
@@ -28,77 +24,11 @@ import nature from "./task-components/nature_layout.vue";
 
 <style lang="scss" scoped>
 @import "../styles/mixin.scss";
-.main {
-  margin: 0 auto;
-  box-sizing: border-box;
-  // @include size(100%, 100%);
 
-  // .work-space--task1 {
-  //   @include size(100vw, 100vh);
-  //   overflow-y: scroll;
-  // }
-
-  .buttons {
-    display: flex;
-    gap: 84vw;
-    justify-content: space-around;
-  }
-
-  .color_blocks {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 3%;
-    text-transform: uppercase;
-  }
-
-  .btn_transform {
-    @include flex(center, center);
-    @include size(6rem);
-    border-radius: 50%;
-    font-weight: 600;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border: none;
-
-    background: linear-gradient(
-      #ff3155 0%,
-      #ff3155 25%,
-      #ffaf42 25%,
-      #ffaf42 50%,
-      #ffed5e 50%,
-      #ffed5e 75%,
-      #2daefd 75%
-    );
-
-    animation: gradient 10s infinite linear;
-
-    @keyframes gradient {
-      to {
-        background-position: 0 12.5em;
-      }
-    }
-
-    transform: scale(0.85);
-    animation: rip 2s ease-in-out infinite;
-
-    @keyframes rip {
-      from {
-        transform: scale(0.85);
-      }
-      50% {
-        transform: scale(1);
-      }
-      to {
-        transform: scale(0.85);
-        background-position: 0 12.5em;
-      }
-    }
-  }
-  // .nature {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   width: 50%;
-  // }
+.color_blocks {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3%;
+  text-transform: uppercase;
 }
 </style>

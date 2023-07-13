@@ -17,7 +17,7 @@ const gallery = [
 
 <template>
   <div class="main">
-    <h1 class="name_task">
+    <h1 class="name_caption">
       Наслоение <br />
       Здесь должен быть коллаж из фотографий из первой таски через пропсы. Но
       его не видно
@@ -25,7 +25,7 @@ const gallery = [
 
     <button_back />
 
-    <div class="work-space--2">
+    <div class="workspace workspace--task2">
       <gallery_el
         v-for="(elem, i) in gallery"
         :key="'elem' + i"
@@ -37,16 +37,4 @@ const gallery = [
 
 <style lang="scss" scoped>
 @import "../styles/mixin.scss";
-
-.main {
-  // margin: 0 auto;
-  // box-sizing: border-box;
-  // @include size(100%, 100%);
-}
-.work-space--2 {
-  //   @include size(100vw, 100vh);
-  //   @include flex(center, center);
-  //   overflow-y: scroll;
-  // }
-}
 </style>

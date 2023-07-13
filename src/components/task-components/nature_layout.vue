@@ -13,23 +13,23 @@ const gallery = [
 </script>
 
 <template>
-  <div class="container">
-    <div class="plant"></div>
-    <div class="dog"></div>
-    <div class="bike"></div>
-    <div class="chamomile"></div>
-    <div class="mountains"></div>
-    <div class="grass"></div>
-    <div class="sheet"></div>
-    <div class="stones"></div>
-    <div class="dachshund"></div>
+  <div class="container-nature">
+    <div class="nature plant"></div>
+    <div class="nature dog"></div>
+    <div class="nature bike"></div>
+    <div class="nature chamomile"></div>
+    <div class="nature mountains"></div>
+    <div class="nature grass"></div>
+    <div class="nature sheet"></div>
+    <div class="nature stones"></div>
+    <div class="nature dachshund"></div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import "src/styles/mixin.scss";
 
-.container {
+.container-nature {
   margin: 5%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -37,14 +37,12 @@ const gallery = [
   grid-gap: 1em;
   height: 48em;
   justify-content: center;
-  
-  // Стараться задавать унивальные индефикаторы 
 
-  div {
+  .nature {
     background-size: contain;
     background-repeat: no-repeat;
     object-fit: contain;
-    filter: drop-shadow(0.5em 0.5em 0.2em #d7e4f6);
+    // filter: drop-shadow(0.5em 0.5em 0.2em #d7e4f6);
   }
 }
 

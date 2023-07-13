@@ -4,9 +4,11 @@ import button_back from "./ui-components/button_back.vue";
 
 <template>
   <div class="main">
-    <h1 class="name_task">Game</h1>
+    <div class="workspace workspace--task5">
+      <h1 class="name_caption">Game</h1>
 
-    <button_back />
+      <button_back />
+    </div>
   </div>
 </template>
 
@@ -14,10 +16,4 @@ import button_back from "./ui-components/button_back.vue";
 // Если мы хотим использовать наши заранее заготовленные mixin,
 // то их надо в начале добавить в этот тимплейт с помощью import
 @import "../styles/mixin.scss";
-
-.main {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-}
 </style>
