@@ -21,3 +21,24 @@
   left: $left;
   right: $right;
 }
+
+@mixin font(
+  $font-family: sans-serif,
+  $font-size,
+  $font-weight,
+  $text-decoration: none
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  text-decoration: $text-decoration;
+}
+
+@mixin layers($background-image, $z-index, $right, $left, $rotate, $scale) {
+  background-image: $background-image;
+  z-index: $z-index;
+  right: $right;
+  left: $left;
+  rotate: $rotate;
+  scale: $scale;
+}
