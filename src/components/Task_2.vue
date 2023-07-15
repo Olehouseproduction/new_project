@@ -1,6 +1,6 @@
 <script setup>
 import button_back from "./ui-components/button_back.vue";
-import gallery_el from "./ui-components/galery_elem.vue";
+import gallery_el from "./ui-components/gallery_elem.vue";
 
 const gallery = [
   { url: "src/assets/image/4.jpg", type: "cube" },

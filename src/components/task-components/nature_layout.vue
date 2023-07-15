@@ -1,28 +1,28 @@
 <script setup>
+import gallery_elem from '../ui-components/gallery_elem.vue';
+
+
 const gallery = [
-  { url: "../../assets/image/4.jpg", type: "cube" },
-  { url: "../../assets/image/9.jpg", type: "cube" },
-  { url: "../../assets/image/6.jpg", type: "cube" },
-  { url: "../../assets/image/7.jpg", type: "horizontal_rectangle" },
-  { url: "../../assets/image/3.jpg", type: "horizontal_rectangle" },
-  { url: "../../assets/image/8.jpg", type: "vertical_rectangle" },
-  { url: "../../assets/image/1.jpg", type: "vertical_rectangle" },
-  { url: "../../assets/image/2.jpg", type: "vertical_rectangle" },
-  { url: "../../assets/image/5.jpg", type: "panorama" },
+  { url: "src/assets/image/4.jpg", type: "cube" },
+  { url: "src/assets/image/9.jpg", type: "cube" },
+  { url: "src/assets/image/6.jpg", type: "cube" },
+  { url: "src/assets/image/7.jpg", type: "horizontal_rectangle" },
+  { url: "src/assets/image/3.jpg", type: "horizontal_rectangle" },
+  { url: "src/assets/image/8.jpg", type: "vertical_rectangle" },
+  { url: "src/assets/image/1.jpg", type: "vertical_rectangle" },
+  { url: "src/assets/image/2.jpg", type: "vertical_rectangle" },
+  { url: "src/assets/image/5.jpg", type: "panorama" },
 ];
 </script>
 
 <template>
   <div class="container-nature">
-    <div class="nature plant"></div>
-    <div class="nature dog"></div>
-    <div class="nature bike"></div>
-    <div class="nature chamomile"></div>
-    <div class="nature mountains"></div>
-    <div class="nature grass"></div>
-    <div class="nature sheet"></div>
-    <div class="nature stones"></div>
-    <div class="nature dachshund"></div>
+    <gallery_elem
+      v-for="(item, i) in gallery"
+      :key="'item' + i"
+      :class="item.type"
+      :src="item.url"
+    />
   </div>
 </template>
 

@@ -3,17 +3,17 @@ import button_back from "./ui-components/button_back.vue";
 import album_el from "./ui-components/album_elem.vue";
 
 const album = [
-  { url: "src/assets/image/foto/beach.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/foto/deer.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/foto/lake.jpg", type: "vertical_rectangle" },
-  { url: "src/assets/image/foto/coffee.jpg", type: "vertical_rectangle" },
-  { url: "src/assets/image/foto/landscape.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/foto/lego.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/foto/pigeon.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/foto/skydiver.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/foto/sportsGirl.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/foto/squirrel.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/foto/workplace.jpg", type: "horizontal_rectangle" },
+  { url: "src/assets/image/foto/beach.jpg", type: "beach" },
+  { url: "src/assets/image/foto/deer.jpg", type: "deer" },
+  { url: "src/assets/image/foto/lake.jpg", type: "lake" },
+  { url: "src/assets/image/foto/coffee.jpg", type: "coffee" },
+  { url: "src/assets/image/foto/landscape.jpg", type: "landscape" },
+  { url: "src/assets/image/foto/lego.jpg", type: "lego" },
+  { url: "src/assets/image/foto/pigeon.jpg", type: "pigeon" },
+  { url: "src/assets/image/foto/skydiver.jpg", type: "skydiver" },
+  { url: "src/assets/image/foto/sportsGirl.jpg", type: "sportsGirl" },
+  { url: "src/assets/image/foto/squirrel.jpg", type: "squirrel" },
+  { url: "src/assets/image/foto/workplace.jpg", type: "workplace" },
 ];
 </script>
 
@@ -22,24 +22,12 @@ const album = [
     <!-- <h1 class="name_caption">Смена классов</h1> -->
     <h1 class="name_caption">Наслоение (временно)</h1>
     <button_back />
-    <album_el
-      v-for="(elem, i) in gallery"
-      :key="'elem' + i"
-      :class="elem.type"
-      :src="elem.url" />
-
     <div class="container-photo">
-      <div class="photo beach horizontal_rectangle"></div>
-      <div class="photo squirrel horizontal_rectangle"></div>
-      <div class="photo deer horizontal_rectangle"></div>
-      <div class="photo lake vertical_rectangle"></div>
-      <div class="photo workplace horizontal_rectangle"></div>
-      <div class="photo sportsGirl horizontal_rectangle"></div>
-      <div class="photo skydiver horizontal_rectangle"></div>
-      <div class="photo pigeon horizontal_rectangle"></div>
-      <div class="photo lego horizontal_rectangle"></div>
-      <div class="photo landscape horizontal_rectangle"></div>
-      <div class="photo coffee vertical_rectangle"></div>
+      <album_el class="photo"
+        v-for="(elem, i) in album"
+        :key="'elem' + i"
+        :class="elem.type"
+        :src="elem.url" />
     </div>
   </div>
 </template>

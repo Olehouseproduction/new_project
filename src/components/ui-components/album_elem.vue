@@ -1,13 +1,13 @@
 <script setup>
 const props = defineProps({
   class: String,
-  url: String,
+  src: String,
 });
 </script>
 
 <template>
   <div :class="props.class">
-    <img :src="props.url" alt="" />
+    <img :src="props.src" alt="" />
   </div>
 </template>
 

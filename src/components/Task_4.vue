@@ -4,49 +4,41 @@ import button_back from "./ui-components/button_back.vue";
 import btn_task from "./ui-components/btn-task.vue";
 
 const tasks = [
-  { name: "Сброс" },
-  { name: "Последний становится красным" },
-  { name: "Первый и четвертый становятся зелеными" },
-  { name: "Отменяет действие первого, и третий становится зеленым" },
-  { name: "Отменяет действие второго, и первый пульсирует" },
-  { name: "Меняет цвет задника" },
-  { name: "Отменяет все и красит всех в розовый" },
-  { name: "Добавлет пульсацию рандомному" },
-  { name: "Делает рандомного синим" },
-  { name: "Делает невидимым рандомного" },
+  { name: "Сброс", refElem: "btnRefresh" },
+  { name: "Последний становится красным", refElem: "ele" },
+  { name: "Первый и четвертый становятся зелеными", refElem: "ele" },
+  { name: "Отменяет действие первого, и третий становится зеленым", refElem: "ele" },
+  { name: "Отменяет действие второго, и первый пульсирует", refElem: "ele" },
+  { name: "Меняет цвет задника", refElem: "ele" },
+  { name: "Отменяет все и красит всех в розовый", refElem: "ele" },
+  { name: "Добавлет пульсацию рандомному", refElem: "ele" },
+  { name: "Делает рандомного синим", refElem: "ele" },
+  { name: "Делает невидимым рандомного", refElem: "ele" },
 ];
 
-let elemTest = ref(null);
-console.log(elemTest.value);
+
+let btnRefresh = ref([])
+
+
 onMounted(() => {
-  console.log(elemTest.value);
-  //   // elemTest.value.classList.add("active");
+  console.log(btnRefresh);
 });
 
-let btn1 = ref(null);
-console.log(btn1.value);
-onMounted(() => {
-  console.log(btn1.value);
-});
 
-let space = ref(null);
-console.log(space.value);
-onMounted(() => {
-  console.log(space.value);
-  space.value.classList.add("z");
-});
 </script>
 
 <template>
   <div class="main">
     <!-- <h1 class="name_caption">Props</h1> -->
-    <h1 ref="elemTest" class="name_caption">Смена классов (временно)</h1>
+    <h1 class="name_caption">Смена классов (временно)</h1>
     <button_back />
     <div ref="space" class="workspace workspace--task4">
       <btn_task
-        v-for="(task, i) in tasks"
+      v-for="(task, i) in tasks"
         :key="'task' + i"
-        :name="task.name" />
+        :name="task.name"
+        ref="btnRefresh"
+      />
     </div>
   </div>
 </template>
@@ -59,7 +51,5 @@ onMounted(() => {
   @include flex(space-around, center);
   margin: 9% auto;
 }
-.btn-task:first-child {
-  display: none;
-}
 </style>
+

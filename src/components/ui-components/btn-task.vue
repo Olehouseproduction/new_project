@@ -49,7 +49,7 @@ const props = defineProps({
   }
 }
 
-.btn-task:first-child {
+.btn-refresh {
   @include position(absolute, $right: 8%, $top: 20%);
   background-color: #ffffff;
   @include size(9em, 5em);
