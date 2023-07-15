@@ -17,8 +17,6 @@ const props = defineProps({
 
 .btn-task {
   @include size(10em, 9em);
-  // продумывать редактирование текста и в всего остального
-  //   padding: calc(100% / 50);
   padding: 6px;
   @include flex(center, center);
   border-radius: 1.5em;
@@ -52,11 +50,8 @@ const props = defineProps({
 }
 
 .btn-task:first-child {
-  position: absolute;
-  top: 20%;
-  right: 8%;
+  @include position(absolute, $right: 8%, $top: 20%);
   background-color: #ffffff;
-
   @include size(9em, 5em);
 }
 </style>

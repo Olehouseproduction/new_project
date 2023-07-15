@@ -1,24 +1,45 @@
-<script setup></script>
+<script setup>
+import { ref, onMounted } from "vue"; // импортим хук жизненного цикла
 
-<template class="unit">
-  <section class="blocks">
+let htmlTest = ref(null);
+console.log(htmlTest.value); // тут null так как html еще не создался
+onMounted(() => {
+  console.log(htmlTest.value); // тут наше значение, так как мы консолим внутри хука, и наш тимплейт уже собрался
+});
+
+let bannerTest = ref(null);
+console.log(bannerTest.value);
+onMounted(() => {
+  console.log(bannerTest.value);
+});
+
+let allBlocks = ref(null);
+console.log(allBlocks.value);
+onMounted(() => {
+  console.log(allBlocks.value);
+});
+</script>
+
+<template>
+  <section ref="allBlocks" class="blocks_mobile">
     <div class="header name_caption">header</div>
     <div class="menu name_caption">menu</div>
-    <div class="hero name_caption">hero</div>
+    <div ref="htmlTest" class="hero name_caption">hero</div>
     <div class="main1 name_caption">main</div>
-    <div class="banner">banner</div>
+    <div ref="bannerTest" class="banner">banner</div>
     <div class="extra">extra</div>
     <div class="image">image</div>
   </section>
 </template>
+
 <style lang="scss" scoped>
 @import "src/styles/mixin.scss";
 
-.blocks {
+.blocks_mobile {
+  display: grid;
   grid-template-columns: 7.5vw;
   grid-template-rows: 4.5vh 4.5vh 12vh 12vh 8vh 8vh 8vh;
-  display: grid;
-  & > div {
+  div {
     @include flex(center, center);
   }
 }

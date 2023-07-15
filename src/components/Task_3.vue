@@ -165,22 +165,22 @@ const album = [
     10deg,
     1.5
   );
-  animation: 40s linear infinite rot;
+  // animation: 40s linear infinite rot;
 }
 
-@keyframes rot {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+// @keyframes rot {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
 
-.landscape:hover {
-  animation-play-state: paused;
-  cursor: grabbing;
-}
+// .landscape:hover {
+//   animation-play-state: paused;
+//   cursor: grabbing;
+// }
 
 .coffee {
   @include layers(url("src/assets/image/foto/coffee.jpg"), 1, auto, auto, 0, 1);

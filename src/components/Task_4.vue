@@ -1,11 +1,7 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import button_back from "./ui-components/button_back.vue";
 import btn_task from "./ui-components/btn-task.vue";
-
-let elemHtml = ref();
-
-console.log(elemHtml.value);
 
 const tasks = [
   { name: "Сброс" },
@@ -19,16 +15,34 @@ const tasks = [
   { name: "Делает рандомного синим" },
   { name: "Делает невидимым рандомного" },
 ];
+
+let elemTest = ref(null);
+console.log(elemTest.value);
+onMounted(() => {
+  console.log(elemTest.value);
+  //   // elemTest.value.classList.add("active");
+});
+
+let btn1 = ref(null);
+console.log(btn1.value);
+onMounted(() => {
+  console.log(btn1.value);
+});
+
+let space = ref(null);
+console.log(space.value);
+onMounted(() => {
+  console.log(space.value);
+  space.value.classList.add("z");
+});
 </script>
 
 <template>
   <div class="main">
     <!-- <h1 class="name_caption">Props</h1> -->
-    <h1 :ref="elemHtml" class="name_caption">Смена классов (временно)</h1>
-
+    <h1 ref="elemTest" class="name_caption">Смена классов (временно)</h1>
     <button_back />
-
-    <div class="workspace workspace--task4">
+    <div ref="space" class="workspace workspace--task4">
       <btn_task
         v-for="(task, i) in tasks"
         :key="'task' + i"
@@ -44,5 +58,8 @@ const tasks = [
   @include size(70%, 50%);
   @include flex(space-around, center);
   margin: 9% auto;
+}
+.btn-task:first-child {
+  display: none;
 }
 </style>

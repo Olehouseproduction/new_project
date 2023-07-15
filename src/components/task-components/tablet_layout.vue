@@ -1,7 +1,7 @@
 <script setup></script>
 
-<template class="unit">
-  <div class="wrap">
+<template>
+  <div class="wrap_tablet">
     <div class="header name_caption">header</div>
     <div class="menu name_caption">menu</div>
     <div class="hero name_caption">hero</div>
@@ -15,14 +15,13 @@
 <style lang="scss" scoped>
 @import "src/styles/mixin.scss";
 
-.wrap {
+.wrap_tablet {
   grid-template-columns: 6vh 9.4vw 6vw;
   grid-template-rows: 4.5vh 18.3vh 17.1vh 9vh 8vh;
   display: grid;
-}
-
-.wrap > div {
-  @include flex(center, center);
+  div {
+    @include flex(center, center);
+  }
 }
 
 .header {

@@ -32,8 +32,8 @@ const gallery = [
 .container-nature {
   margin: 5%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 1em;
   height: 48em;
   justify-content: center;

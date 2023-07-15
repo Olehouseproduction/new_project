@@ -11,6 +11,7 @@ function switchClass() {
 
 <template>
   <router-view v-slot="{ Component }">
+    <!--Transition позволяет делать красивые переходы между роутами-->
     <Transition name="fade" mode="out-in">
       <component :is="Component"></component>
     </Transition>

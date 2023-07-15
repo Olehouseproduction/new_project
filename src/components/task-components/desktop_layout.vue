@@ -1,6 +1,6 @@
 <script setup></script>
-<template class="unit">
-  <div class="wrapper">
+<template>
+  <div class="wrapper_desktop">
     <div class="header name_caption">header</div>
     <div class="menu name_caption">menu</div>
     <div class="hero name_caption">hero</div>
@@ -14,11 +14,11 @@
 <style lang="scss" scoped>
 @import "src/styles/mixin.scss";
 
-.wrapper {
+.wrapper_desktop {
   grid-template-columns: 7.5vw 7.5vw 7.5vw 7.5vw;
   grid-template-rows: 5.5vh 26vh 8.5vh 8.5vh 8.5vh;
   display: grid;
-  & > div {
+  div {
     @include flex(center, center);
   }
 }

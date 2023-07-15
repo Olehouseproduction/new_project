@@ -1,6 +1,6 @@
 <script setup>
 // Импортим компонент
-
+// import { ref } from "vue";
 import button_link from "./ui-components/button_link.vue";
 
 //Cоздаем массив объектов с ключами url и name
