@@ -2,10 +2,10 @@
 
 <template class="unit">
   <div class="wrap">
-    <div class="header font">header</div>
-    <div class="menu font">menu</div>
-    <div class="hero font">hero</div>
-    <div class="main1 font">main</div>
+    <div class="header name_caption">header</div>
+    <div class="menu name_caption">menu</div>
+    <div class="hero name_caption">hero</div>
+    <div class="main1 name_caption">main</div>
     <div class="banner">banner</div>
     <div class="extra">extra</div>
     <div class="image">image</div>
@@ -28,10 +28,6 @@
 .header {
   background-color: #17112b;
   grid-column: 1/4;
-}
-
-.font {
-  color: white;
 }
 
 .menu {

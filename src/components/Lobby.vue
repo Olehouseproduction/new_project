@@ -16,9 +16,9 @@ const links = [
 
 <template>
   <div class="main">
-    <video autoplay loop id="myVideo">
+    <!-- <video autoplay loop id="myVideo">
       <source src="../assets/video/daisy-stock-h264-video.mp4" />
-    </video>
+    </video> -->
 
     <button_link
       v-for="(link, i) in links"
@@ -47,15 +47,17 @@ const links = [
 <style lang="scss" scoped>
 @import "src/styles/mixin.scss";
 .main {
+  // background-color: #f3f3f3;
+  background-image: url(../assets/image/3671442.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: contain;
   @include size(100vw, 100vh);
-  @include flex(center, normal, column);
-  margin: 0 auto;
-  text-align: right;
+  @include flex(center, center, column);
 }
-#myVideo {
-  // Провести работу над ошибками    11.07.2023 #ошибка
-  @include size(100%);
-  @include position($position: fixed, $top: 0, $left: 0);
-  object-fit: cover;
-}
+// #myVideo {
+//   @include size(100%);
+//   object-fit: cover;
+//   position: fixed;
+// }
 </style>

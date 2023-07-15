@@ -5,10 +5,14 @@ const props = defineProps({
 });
 </script>
 
-<template>
+<!-- <template>
   <div :class="props.class">
     <img :src="props.url" alt="" />
   </div>
+</template> -->
+
+<template>
+  <img :class="props.class" :src="props.url" alt="" />
 </template>
 
 <style lang="scss" scoped>

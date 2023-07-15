@@ -1,4 +1,11 @@
 @import "./mixin.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   @include size(100%);
   margin: 0 auto;
@@ -7,7 +14,19 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.name_task {
+.name_caption {
   color: white;
   text-align: center;
+}
+
+.main {
+  margin: 0 auto;
+  @include size(100vw, 100vh);
+  position: relative;
+}
+
+.work-space {
+  @include size(100vw, 100vh);
+  @include flex(center, center);
+  margin: 0 auto;
 }
