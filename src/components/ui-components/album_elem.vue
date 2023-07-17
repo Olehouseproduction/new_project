@@ -13,14 +13,4 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 @import "../../styles/mixin.scss";
-
-.horizontal_rectangle {
-  @include size(28.5em, 18.7em);
-  object-fit: contain;
-}
-
-.vertical_rectangle {
-  @include size(36em, 54em);
-  object-fit: contain;
-}
 </style>

@@ -3,8 +3,6 @@ import button_back from "./ui-components/button_back.vue";
 import mobile from "./task-components/mobile_layout.vue";
 import tablet from "./task-components/tablet_layout.vue";
 import desktop from "./task-components/desktop_layout.vue";
-import nature from "./task-components/nature_layout.vue";
-// import Button_link from "./ui-components/button_link.vue";
 </script>
 
 <template>
@@ -17,7 +15,6 @@ import nature from "./task-components/nature_layout.vue";
         <tablet />
         <desktop />
       </section>
-      <nature />
     </div>
   </div>
 </template>

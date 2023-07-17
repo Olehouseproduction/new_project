@@ -1,6 +1,5 @@
 <script setup>
-import gallery_elem from '../ui-components/gallery_elem.vue';
-
+import gallery_elem from "../ui-components/gallery_elem.vue";
 
 const gallery = [
   { url: "src/assets/image/4.jpg", type: "cube" },
@@ -21,8 +20,7 @@ const gallery = [
       v-for="(item, i) in gallery"
       :key="'item' + i"
       :class="item.type"
-      :src="item.url"
-    />
+      :src="item.url" />
   </div>
 </template>
 
@@ -38,72 +36,72 @@ const gallery = [
   height: 48em;
   justify-content: center;
 
-  .nature {
-    background-size: contain;
-    background-repeat: no-repeat;
-    object-fit: contain;
-    // filter: drop-shadow(0.5em 0.5em 0.2em #d7e4f6);
-  }
-}
+  // .nature {
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  //   object-fit: contain;
+  //
+  // }
+  // }
 
-.plant {
-  background-image: url("../../assets/image/1.jpg");
-  background-position: center;
-  grid-column: 5;
-  grid-row: 1/3;
-}
+  // .plant {
+  //   background-image: url("../../assets/image/1.jpg");
+  //   background-position: center;
+  //   grid-column: 5;
+  //   grid-row: 1/3;
+  // }
 
-.dog {
-  background-image: url("../../assets/image/2.jpg");
-  grid-column: 1;
-  grid-row: 1/3;
-  background-position: bottom;
-}
+  // .dog {
+  //   background-image: url("../../assets/image/2.jpg");
+  //   grid-column: 1;
+  //   grid-row: 1/3;
+  //   background-position: bottom;
+  // }
 
-.bike {
-  background-image: url("../../assets/image/3.jpg");
-  grid-column: 4;
-  grid-row: 1;
-  background-position: bottom;
-}
+  // .bike {
+  //   background-image: url("../../assets/image/3.jpg");
+  //   grid-column: 4;
+  //   grid-row: 1;
+  //   background-position: bottom;
+  // }
 
-.chamomile {
-  background-image: url("../../assets/image/4.jpg");
-  grid-column: 2;
-  background-position: center;
-}
+  // .chamomile {
+  //   background-image: url("../../assets/image/4.jpg");
+  //   grid-column: 2;
+  //   background-position: center;
+  // }
 
-.mountains {
-  background-image: url("../../assets/image/5.jpg");
-  grid-column: 3/5;
-  background-position: center;
-  grid-row: 2;
-}
+  // .mountains {
+  //   background-image: url("../../assets/image/5.jpg");
+  //   grid-column: 3/5;
+  //   background-position: center;
+  //   grid-row: 2;
+  // }
 
-.grass {
-  background-image: url("../../assets/image/6.jpg");
-  grid-column: 3;
-  grid-row: 1;
-  background-position: center;
-}
+  // .grass {
+  //   background-image: url("../../assets/image/6.jpg");
+  //   grid-column: 3;
+  //   grid-row: 1;
+  //   background-position: center;
+  // }
 
-.sheet {
-  background-image: url("../../assets/image/7.jpg");
-  grid-column: 4;
-  grid-row: 3;
-}
+  // .sheet {
+  //   background-image: url("../../assets/image/7.jpg");
+  //   grid-column: 4;
+  //   grid-row: 3;
+  // }
 
-.stones {
-  background-image: url("../../assets/image/8.jpg");
-  grid-column: 2;
-  grid-row: 2/4;
-  background-position: top;
-}
+  // .stones {
+  //   background-image: url("../../assets/image/8.jpg");
+  //   grid-column: 2;
+  //   grid-row: 2/4;
+  //   background-position: top;
+  // }
 
-.dachshund {
-  background-image: url("../../assets/image/9.jpg");
-  grid-column: 3;
-  grid-row: 3;
-  background-position: center;
+  // .dachshund {
+  //   background-image: url("../../assets/image/9.jpg");
+  //   grid-column: 3;
+  //   grid-row: 3;
+  //   background-position: center;
 }
 </style>

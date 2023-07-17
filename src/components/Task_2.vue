@@ -17,11 +17,7 @@ const gallery = [
 
 <template>
   <div class="main">
-    <h1 class="name_caption">
-      Наслоение <br />
-      Здесь должен быть коллаж из фотографий из первой таски через пропсы. Но
-      его не видно
-    </h1>
+    <h1 class="name_caption">Коллаж nature через props</h1>
 
     <button_back />
 

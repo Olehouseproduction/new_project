@@ -11,7 +11,6 @@ const props = defineProps({
   </div>
 </template>
 
-
 <style lang="scss" scoped>
 @import "../../styles/mixin.scss";
 
@@ -31,9 +30,8 @@ const props = defineProps({
   @include size(57.6em, 20em);
   object-fit: contain;
 }
-.photo{
+.photo {
   @include size(100%);
   object-fit: cover;
 }
-
 </style>

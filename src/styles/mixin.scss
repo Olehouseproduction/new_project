@@ -35,14 +35,12 @@
 }
 
 @mixin layers(
-  $background-image,
   $z-index,
   $right: initial,
   $left: initial,
   $rotate: initial,
   $scale: initial
 ) {
-  background-image: $background-image;
   z-index: $z-index;
   right: $right;
   left: $left;
