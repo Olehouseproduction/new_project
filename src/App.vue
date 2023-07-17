@@ -20,10 +20,6 @@ function switchClass() {
 
 <style lang="scss">
 @import "./styles/main.scss";
-#app {
-  @include size(100%);
-  @include flex(center, center);
-}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.4s ease;

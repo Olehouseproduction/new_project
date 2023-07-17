@@ -44,10 +44,8 @@ const album = [
 
   .photo {
     // background-size: auto;
-    @include size(50vw, 50vh);
+    @include size(400px);
     margin: 25% auto;
-    background-repeat: no-repeat;
-    background-position: center;
     position: absolute;
   }
 }
