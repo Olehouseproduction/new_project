@@ -6,9 +6,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div :class="props.class">
-    <img class="photo_nature" :src="props.src" alt="" />
-  </div>
+  <img class="photo_nature" :class="props.class" :src="props.src" alt="" />
 </template>
 
 <style lang="scss" scoped>

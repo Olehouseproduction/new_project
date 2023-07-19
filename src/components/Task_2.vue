@@ -6,18 +6,15 @@ const gallery = [
   { url: "src/assets/image/8.jpg", type: "vertical_rectangle" },
   { url: "src/assets/image/4.jpg", type: "cube" },
   { url: "src/assets/image/7.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/9.jpg", type: "cube" },
-
   { url: "src/assets/image/6.jpg", type: "cube" },
   { url: "src/assets/image/3.jpg", type: "horizontal_rectangle" },
-  // { url: "src/assets/image/1.jpg", type: "vertical_rectangle" },
-  // { url: "src/assets/image/2.jpg", type: "vertical_rectangle" },
+  { url: "src/assets/image/1.jpg", type: "vertical_rectangle" },
+  { url: "src/assets/image/2.jpg", type: "vertical_rectangle" },
   { url: "src/assets/image/seagulls.jpg", type: "cube" },
-  // { url: "src/assets/image/5.jpg", type: "cube" },
-  // { url: "src/assets/image/daisy.jpg", type: "horizontal_rectangle" },
+  { url: "src/assets/image/daisy.jpg", type: "horizontal_rectangle" },
   { url: "src/assets/image/Flowers.jpg", type: "cube" },
   { url: "src/assets/image/Greece.png", type: "cube" },
-  { url: "src/assets/image/Lotos.jpg", type: "cube" },
+  { url: "src/assets/image/Lotos.jpg", type: "vertical_rectangle" },
   { url: "src/assets/image/Sea.jpg", type: "cube" },
   { url: "src/assets/image/Sunset.jpg", type: "cube" },
   { url: "src/assets/image/Tree.jpg", type: "cube" },
@@ -40,12 +37,15 @@ const gallery = [
 <style lang="scss" scoped>
 @import "../styles/mixin.scss";
 .workspace--task2 {
-  @include size(70%, fit-content);
+  // @include size(70%, fit-content);
+  width: 70%;
   margin: 5% auto;
   display: grid;
   grid-gap: 0.5em;
+  // row-gap: 0.5em;
 
-  grid-template-columns: repeat(3, auto);
+  grid-auto-flow: row dense;
+  grid-template-columns: repeat(3, 1fr);
 
   // grid-template-rows: 1fr 1fr;
   // grid-template-rows: repeat(2, auto);
@@ -55,27 +55,32 @@ const gallery = [
   // border: 2px solid rgb(17, 0, 255);
 
   .picture {
-    // border: solid 1em red;
+    // border: solid 1px red;
+    background-color: aqua;
   }
 }
 
 .cube {
-  @include size(31.25rem);
-  grid-column: 1, 2;
+  // @include size(31.25rem);
+  // grid-column: 1, 2;
   // // grid-column: nth-child(2n+1);
-  grid-row: 1, 3;
+  // grid-row: 1, 3;
+  aspect-ratio: 1 / 1;
 }
 
 .horizontal_rectangle {
-  @include size(63.3rem, 31.25rem);
-  grid-column: 1 / span 2;
-  grid-row: 2;
+  // @include size(63.3rem, 31.25rem);
+  aspect-ratio: 2 / 1;
+  grid-column-end: span 2;
+  // grid-column: 1 / span 2;
+  // grid-row: 2;
 }
 
 .vertical_rectangle {
-  @include size(31.25rem, 63.3rem);
-  grid-column: 3;
-  grid-row: 1 / span 2;
+  // @include size(31.25rem, 63.3rem);
+  // grid-column: 3;
+  grid-row-end: span 2;
+  // aspect-ratio: 1 / 2;
 }
 
 // .panorama {
