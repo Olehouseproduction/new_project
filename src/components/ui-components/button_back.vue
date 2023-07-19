@@ -13,7 +13,7 @@
   padding: 30px;
   text-decoration: none;
   border-radius: 10px;
-  background-color: #ffe42c;
+  background-color: #ffd02f;
   color: #000000;
 }
 </style>

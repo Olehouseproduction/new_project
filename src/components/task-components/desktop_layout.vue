@@ -25,7 +25,7 @@
 
 .header {
   background-color: #17112b;
-  grid-column: 1/2;
+  grid-column: 1/3;
 }
 
 .menu {

@@ -41,7 +41,7 @@ const props = defineProps({
   }
   50% {
     transform: scale(1.2);
-    background-color: #ffe42c;
+    background-color: #ffd02f;
   }
   100% {
     transform: scale(1);

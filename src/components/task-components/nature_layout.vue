@@ -1,20 +1,20 @@
 <script setup>
-import gallery_elem from "../ui-components/gallery_elem.vue";
+// import gallery_elem from "../ui-components/gallery_elem.vue";
 
-const gallery = [
-  { url: "src/assets/image/4.jpg", type: "cube" },
-  { url: "src/assets/image/9.jpg", type: "cube" },
-  { url: "src/assets/image/6.jpg", type: "cube" },
-  { url: "src/assets/image/7.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/3.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/8.jpg", type: "vertical_rectangle" },
-  { url: "src/assets/image/1.jpg", type: "vertical_rectangle" },
-  { url: "src/assets/image/2.jpg", type: "vertical_rectangle" },
-  { url: "src/assets/image/5.jpg", type: "panorama" },
-];
+// const gallery = [
+//   { url: "src/assets/image/4.jpg", type: "cube" },
+//   { url: "src/assets/image/9.jpg", type: "cube" },
+//   { url: "src/assets/image/6.jpg", type: "cube" },
+//   { url: "src/assets/image/7.jpg", type: "horizontal_rectangle" },
+//   { url: "src/assets/image/3.jpg", type: "horizontal_rectangle" },
+//   { url: "src/assets/image/8.jpg", type: "vertical_rectangle" },
+//   { url: "src/assets/image/1.jpg", type: "vertical_rectangle" },
+//   { url: "src/assets/image/2.jpg", type: "vertical_rectangle" },
+//   { url: "src/assets/image/5.jpg", type: "panorama" },
+// ];
 </script>
 
-<template>
+<!-- <template>
   <div class="container-nature">
     <gallery_elem
       v-for="(item, i) in gallery"
@@ -34,7 +34,7 @@ const gallery = [
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 1em;
   height: 48em;
-  justify-content: center;
+  justify-content: center; -->
 
   // .nature {
   //   background-size: contain;

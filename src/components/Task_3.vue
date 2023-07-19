@@ -19,8 +19,8 @@ const album = [
 
 <template>
   <h1 class="name_caption">Наслоение</h1>
+  <button_back />
   <div class="workspace workspace--task3">
-    <button_back />
     <album_el
       class="photo"
       v-for="(elem, i) in album"
@@ -33,138 +33,73 @@ const album = [
 <style lang="scss" scoped>
 @import "../styles/mixin.scss";
 
-.name_caption {
-  display: block;
-}
 .workspace--task3 {
   @include flex(center, center);
-  @include size(50vw, 50vh);
-  // background-size: 50%;
-  // margin: 25% auto;
+  margin: 21% auto;
 
   .photo {
-    // background-size: auto;
-    @include size(400px);
-    margin: 25% auto;
+    @include size(28.5em, 18.7em);
     position: absolute;
   }
 }
 .beach {
-  // @include layers(10, auto, auto, -35deg, 1.3);
-  z-index: 10;
-  rotate: -35deg;
-  width: 50%;
+  @include layers(10, auto, auto, -35deg, 1.3);
 }
 
-// .beach {
-//   @include layers(10, auto, auto, -35deg, 1.3);
-// }
+.squirrel {
+  @include layers(6, auto, 35%, -61deg, 1.5);
+  top: 35%;
+}
 
-// .squirrel {
-//   @include layers(6, auto, 0.1%, 30deg, 1.3);
-//   width: 40%;
-// }
+.deer {
+  @include layers(8, auto, auto, -19deg, 1.4);
+}
 
-// .deer {
-//   @include layers(
-//     url("../assets/image/foto/deer.jpg"),
-//     8,
-//     0.1%,
-//     auto,
-//     -19deg,
-//     1.3
-//   );
-// }
+.lake {
+  @include layers(7, auto, 38%, 41deg, 1.5);
+}
 
-// .lake {
-//   @include layers(
-//     url("src/assets/image/foto/lake.jpg"),
-//     7,
-//     auto,
-//     auto,
-//     -7deg,
-//     1.3
-//   );
-// }
+.workplace {
+  @include layers(9, auto, auto, 15deg, 1.4);
+}
 
-// .workplace {
-//   @include layers(
-//     url("src/assets/image/foto/workplace.jpg"),
-//     9,
-//     auto,
-//     0.1em,
-//     15deg,
-//     1.3
-//   );
-// }
+.sportsGirl {
+  @include layers(5, auto, auto, -5deg, 1.3);
+}
 
-// .sportsGirl {
-//   @include layers(
-//     url("src/assets/image/foto/sportsGirl.jpg"),
-//     5,
-//     0.5em,
-//     1,
-//     -5deg,
-//     1
-//   );
-// }
-// .skydiver {
-//   @include layers(
-//     url("src/assets/image/foto/skydiver.jpg"),
-//     4,
-//     1,
-//     1,
-//     7deg,
-//     1.2
-//   );
-// }
-// .pigeon {
-//   @include layers(
-//     url("src/assets/image/foto/pigeon.jpg"),
-//     3,
-//     auto,
-//     0.5,
-//     20deg,
-//     1
-//   );
-// }
-// .lego {
-//   @include layers(
-//     url("src/assets/image/foto/lego.jpg"),
-//     2,
-//     0.5em,
-//     auto,
-//     -20deg,
-//     auto
-//   );
-// }
-// .landscape {
-//   @include layers(
-//     url("src/assets/image/foto/landscape.jpg"),
-//     11,
-//     auto,
-//     auto,
-//     10deg,
-//     1.5
-//   );
-//   // animation: 40s linear infinite rot;
-// }
+.skydiver {
+  @include layers(4, auto, auto, 5deg, 1.5);
+}
+.pigeon {
+  @include layers(3, auto, auto, 15deg, 1.3);
+}
 
-// // @keyframes rot {
-// //   0% {
-// //     transform: rotate(0deg);
-// //   }
-// //   100% {
-// //     transform: rotate(360deg);
-// //   }
-// // }
+.lego {
+  @include layers(2, auto, auto, -35deg, 1.5);
+  top: 35%;
+}
 
-// // .landscape:hover {
-// //   animation-play-state: paused;
-// //   cursor: grabbing;
-// // }
+.coffee {
+  @include layers(1, auto, auto, 0, 1.1);
+}
 
-// .coffee {
-//   @include layers(url("src/assets/image/foto/coffee.jpg"), 1, auto, auto, 0, 1);
-// }
+.landscape {
+  @include layers(11, auto, auto, 10deg, 1.5);
+  @include size(50px);
+  // animation: 40s linear infinite rot;
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.landscape:hover {
+  animation-play-state: paused;
+  cursor: grabbing;
+}
 </style>

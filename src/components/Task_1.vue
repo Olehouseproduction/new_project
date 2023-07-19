@@ -7,14 +7,12 @@ import desktop from "./task-components/desktop_layout.vue";
 
 <template>
   <div class="main">
+    <button_back />
     <h1 class="name_caption">Позиционирование</h1>
     <div class="workspace workspace--task1">
-      <button_back />
-      <section class="color_blocks">
-        <mobile />
-        <tablet />
-        <desktop />
-      </section>
+      <mobile />
+      <tablet />
+      <desktop />
     </div>
   </div>
 </template>
@@ -22,10 +20,9 @@ import desktop from "./task-components/desktop_layout.vue";
 <style lang="scss" scoped>
 @import "../styles/mixin.scss";
 
-.color_blocks {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 3%;
+.workspace--task1 {
+  @include size(100%, 100%);
+  @include flex(space-evenly, center, row);
   text-transform: uppercase;
 }
 </style>
