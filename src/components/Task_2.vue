@@ -4,11 +4,8 @@ import gallery_el from "./ui-components/gallery_elem.vue";
 
 const gallery = [
   { url: "src/assets/image/8.jpg", type: "vertical_rectangle" },
-  { url: "src/assets/image/4.jpg", type: "cube" },
-  { url: "src/assets/image/7.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/6.jpg", type: "cube" },
+  { url: "src/assets/image/sakura.jpg", type: "cube" },
   { url: "src/assets/image/3.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/1.jpg", type: "vertical_rectangle" },
   { url: "src/assets/image/2.jpg", type: "vertical_rectangle" },
   { url: "src/assets/image/seagulls.jpg", type: "cube" },
   { url: "src/assets/image/daisy.jpg", type: "horizontal_rectangle" },
@@ -18,6 +15,7 @@ const gallery = [
   { url: "src/assets/image/Sea.jpg", type: "cube" },
   { url: "src/assets/image/Sunset.jpg", type: "cube" },
   { url: "src/assets/image/Tree.jpg", type: "cube" },
+  { url: "src/assets/image/fields.jpg", type: "cube" },
 ];
 </script>
 
