@@ -6,9 +6,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div :class="props.class">
-    <img class="photo_nature" :src="props.src" alt="" />
-  </div>
+  <img class="photo_nature" :class="props.class" :src="props.src" alt="" />
 </template>
 
 <style lang="scss" scoped>
@@ -17,5 +15,6 @@ const props = defineProps({
 .photo_nature {
   @include size(100%);
   object-fit: cover;
+  border-radius: 0.5rem;
 }
 </style>

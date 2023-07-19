@@ -6,14 +6,12 @@ import desktop from "./task-components/desktop_layout.vue";
 </script>
 
 <template>
-  <div class="main">
-    <button_back />
-    <h1 class="name_caption">Позиционирование</h1>
-    <div class="workspace workspace--task1">
-      <mobile />
-      <tablet />
-      <desktop />
-    </div>
+  <h1 class="name_caption">Позиционирование</h1>
+  <button_back />
+  <div class="workspace workspace--task1">
+    <mobile />
+    <tablet />
+    <desktop />
   </div>
 </template>
 
@@ -21,7 +19,7 @@ import desktop from "./task-components/desktop_layout.vue";
 @import "../styles/mixin.scss";
 
 .workspace--task1 {
-  @include size(100%, 100%);
+  @include size(100vw, 80vh);
   @include flex(space-evenly, center, row);
   text-transform: uppercase;
 }
