@@ -17,5 +17,6 @@ const props = defineProps({
 .photo_nature {
   @include size(100%);
   object-fit: cover;
+  border-radius: 0.5rem;
 }
 </style>

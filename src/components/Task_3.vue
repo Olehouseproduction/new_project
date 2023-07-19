@@ -35,7 +35,7 @@ const album = [
 
 .workspace--task3 {
   @include flex(center, center);
-  margin: 21% auto;
+  margin: 22% auto;
 
   .photo {
     @include size(28.5em, 18.7em);
@@ -48,7 +48,6 @@ const album = [
 
 .squirrel {
   @include layers(6, auto, 35%, -61deg, 1.5);
-  top: 35%;
 }
 
 .deer {
@@ -76,7 +75,6 @@ const album = [
 
 .lego {
   @include layers(2, auto, auto, -35deg, 1.5);
-  top: 35%;
 }
 
 .coffee {
