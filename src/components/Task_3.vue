@@ -35,7 +35,7 @@ const album = [
 
 .workspace--task3 {
   @include flex(center, center);
-  margin: 22% auto;
+  margin: 21% auto;
 
   .photo {
     @include size(28.5em, 18.7em);

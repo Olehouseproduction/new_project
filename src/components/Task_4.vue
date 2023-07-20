@@ -28,7 +28,6 @@ onMounted(() => {
 
 <template>
   <div class="main">
-    <!-- <h1 class="name_caption">Props</h1> -->
     <h1 class="name_caption">Смена классов</h1>
     <button_back />
     <div ref="space" class="workspace workspace--task4">
