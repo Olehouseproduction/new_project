@@ -1,12 +1,14 @@
 <script setup>
 const props = defineProps({
   name: String,
+  index: Number,
 });
 </script>
 
 <template>
   <div class="btn-task">
     <span>
+      {{ props.index }}
       {{ props.name }}
     </span>
   </div>
@@ -34,24 +36,72 @@ const props = defineProps({
   }
 }
 
+.blue {
+  background-color: #47aeff;
+  transition: 0.5s linear;
+}
+
+.green {
+  background-color: #0cec61;
+  transition: 0.5s linear;
+}
+
+.red {
+  background-color: #fc2335;
+  transition: 0.5s linear;
+}
+
+.active {
+  background-color: #6495ed;
+  transition: 350ms linear;
+}
+
+.pink {
+  background-color: #ef71e2;
+}
+
+.yellow {
+  background-color: #ffd02f;
+}
+
+.invisible {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pulse {
+  animation: pulse 1.3s ease-in-out infinite;
+}
+
+// .refresh {
+//   position: absolute;
+//   top: 5%;
+//   right: 5%;
+// }
+
 @keyframes pulse {
   0% {
     transform: scale(1);
-    background-color: #f1f8fb;
+    // background-color: #f1f8fb;
   }
   50% {
     transform: scale(1.2);
-    background-color: #ffd02f;
+    // background-color: #b1ecd5;
   }
   100% {
     transform: scale(1);
-    background-color: #f1f8fb;
+    // background-color: #f1f8fb;
   }
 }
 
-.btn-refresh {
+.btn-task:first-child {
   @include position(absolute, $right: 8%, $top: 20%);
   background-color: #ffffff;
   @include size(9em, 5em);
+}
+
+body.active {
+  background-color: purple;
+  transition: 350ms linear;
 }
 </style>
