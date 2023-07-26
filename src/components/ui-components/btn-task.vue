@@ -51,11 +51,6 @@ const props = defineProps({
   transition: 0.5s linear;
 }
 
-.active {
-  background-color: #6495ed;
-  transition: 350ms linear;
-}
-
 .pink {
   background-color: #ef71e2;
 }
@@ -100,8 +95,8 @@ const props = defineProps({
   @include size(9em, 5em);
 }
 
-body.active {
-  background-color: purple;
-  transition: 350ms linear;
-}
+// body.active {
+//   background-color: purple;
+//   transition: 350ms linear;
+// }
 </style>

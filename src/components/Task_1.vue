@@ -1,10 +1,9 @@
 <script setup>
 import button_back from "./ui-components/button_back.vue";
-import mobile from "./task-components/mobile_layout.vue";
-import tablet from "./task-components/tablet_layout.vue";
-import desktop from "./task-components/desktop_layout.vue";
-// import nature_layout from "./task-components/nature_layout.vue";
-import gallery_el from "./ui-components/gallery_elem.vue";
+import mobile from "./task-components/sub-task-1.1-mobile.vue";
+import tablet from "./task-components/sub-task-1.2-tablet.vue";
+import desktop from "./task-components/sub-task-1.3-desktop.vue";
+import gallery_el from "./task-components/sub-task-1.4-gallery.vue";
 
 const gallery = [
   { url: "src/assets/image/8.jpg", type: "vertical_rectangle" },
@@ -62,7 +61,7 @@ const gallery = [
 // }
 
 .workspace--task1 {
-  @include size(100vw, 60vh);
+  @include size(100%, 60vh);
   @include flex(space-evenly, center, row);
   text-transform: uppercase;
 }

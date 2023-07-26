@@ -20,17 +20,39 @@ const tasks = [
 ];
 
 let space = ref(null);
+
 function handleClick(task) {
   console.log(task);
 
-  onMounted(() => {
-    console.log(space);
-  });
-  // onMounted(() => {
-  //   space.value.style.backgroundСolor = "#ff0000";
-  // });
-
   let allButtons = space.value.children;
+  console.log(allButtons, "работает");
+
+  if (task == "btnRefresh") {
+    console.log(allButtons);
+    for (const item of allButtons) {
+      console.log(item, "каждый элемент");
+    }
+
+    onMounted(() => {
+      console.log(space);
+    });
+
+    // onMounted(() => {
+    //   space.value.style.backgroundСolor = "#ff0000";
+    // });
+
+    // allButtons.forEach((item) => {
+    //   console.log(item, "каждый элемент", i++);
+    // item.classList.remove("active");
+    // item.classList.remove("green");
+    // item.classList.remove("blue");
+    // item.classList.remove("pulse");
+    // item.classList.remove("delpink");
+    // item.classList.remove("active");
+    // item.classList.remove("invisible");
+    // });
+  }
+
   let randomButton = allButtons.item;
 
   let firstButton = allButtons.item(1);
@@ -42,6 +64,7 @@ function handleClick(task) {
   let seventhButton = allButtons.item(7);
   let eighthButton = allButtons.item(8);
   let ninthButton = allButtons.item(9);
+  let background = document.querySelector("body");
 
   // let reset = allButtons.item(0);
   if (task == "btnRefresh") {
@@ -83,24 +106,10 @@ function handleClick(task) {
     ninthButton.classList.remove("pulse");
 
     randomButton.classList.remove("invisible");
-  }
-  // if (task == "btnRefresh") {
-  //   console.log(allButtons);
-  //   for (const item of allButtons) {
-  //     console.log(item, "каждый элемент");
-  //   }
 
-  //   allButtons.forEach((item) => {
-  //     console.log(item, "каждый элемент", i++);
-  //     item.classList.remove("active");
-  //     item.classList.remove("green");
-  //     item.classList.remove("blue");
-  //     item.classList.remove("pulse");
-  //     item.classList.remove("delpink");
-  //     item.classList.remove("active");
-  //     item.classList.remove("invisible");
-  //   });
-  // }
+    background.classList.remove("active"); // Не снимает
+    background.classList.add("active2");
+  }
 
   // if (task == "btnRefresh") {
   //   let drop =  ;
@@ -127,7 +136,6 @@ function handleClick(task) {
   }
 
   if (task == "5") {
-    let background = document.querySelector("body");
     background.classList.add("active");
   }
 
@@ -144,6 +152,8 @@ function handleClick(task) {
     eighthButton.classList.add("pink");
     ninthButton.classList.add("pink");
     thirdButton.classList.remove("yellow");
+    firstButton.classList.remove("pulse");
+    randomButton.classList.remove("pulse"); // не отменил
   }
 
   if (task == "7") {

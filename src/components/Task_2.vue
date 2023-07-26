@@ -1,6 +1,6 @@
 <script setup>
 import button_back from "./ui-components/button_back.vue";
-import album_el from "./ui-components/album_elem.vue";
+import album_el from "./task-components/sub-task-2-album.vue";
 
 const album = [
   { url: "src/assets/image/foto/beach.jpg", type: "beach" },
@@ -18,15 +18,17 @@ const album = [
 </script>
 
 <template>
-  <h1 class="name_caption">Наслоение</h1>
-  <button_back />
-  <div class="workspace workspace--task3">
-    <album_el
-      class="photo"
-      v-for="(elem, i) in album"
-      :key="'elem' + i"
-      :class="elem.type"
-      :src="elem.url" />
+  <div>
+    <h1 class="name_caption">Наслоение</h1>
+    <button_back />
+    <div class="workspace workspace--task3">
+      <album_el
+        class="photo"
+        v-for="(elem, i) in album"
+        :key="'elem' + i"
+        :class="elem.type"
+        :src="elem.url" />
+    </div>
   </div>
 </template>
 
