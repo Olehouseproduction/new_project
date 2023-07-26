@@ -13,7 +13,5 @@ import button_back from "./ui-components/button_back.vue";
 </template>
 
 <style lang="scss" scoped>
-// Если мы хотим использовать наши заранее заготовленные mixin,
-// то их надо в начале добавить в этот тимплейт с помощью import
 @import "../styles/mixin.scss";
 </style>

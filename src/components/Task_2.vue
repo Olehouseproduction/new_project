@@ -1,89 +1,105 @@
 <script setup>
 import button_back from "./ui-components/button_back.vue";
-import gallery_el from "./ui-components/gallery_elem.vue";
+import album_el from "./task-components/sub-task-2-album.vue";
 
-const gallery = [
-  { url: "src/assets/image/8.jpg", type: "vertical_rectangle" },
-  { url: "src/assets/image/4.jpg", type: "cube" },
-  { url: "src/assets/image/7.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/6.jpg", type: "cube" },
-  { url: "src/assets/image/3.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/1.jpg", type: "vertical_rectangle" },
-  { url: "src/assets/image/2.jpg", type: "vertical_rectangle" },
-  { url: "src/assets/image/seagulls.jpg", type: "cube" },
-  { url: "src/assets/image/daisy.jpg", type: "horizontal_rectangle" },
-  { url: "src/assets/image/Flowers.jpg", type: "cube" },
-  { url: "src/assets/image/Greece.png", type: "cube" },
-  { url: "src/assets/image/Lotos.jpg", type: "vertical_rectangle" },
-  { url: "src/assets/image/Sea.jpg", type: "cube" },
-  { url: "src/assets/image/Sunset.jpg", type: "cube" },
-  { url: "src/assets/image/Tree.jpg", type: "cube" },
+const album = [
+  { url: "src/assets/image/foto/beach.jpg", type: "beach" },
+  { url: "src/assets/image/foto/deer.jpg", type: "deer" },
+  { url: "src/assets/image/foto/lake.jpg", type: "lake" },
+  { url: "src/assets/image/foto/coffee.jpg", type: "coffee" },
+  { url: "src/assets/image/foto/landscape.jpg", type: "landscape" },
+  { url: "src/assets/image/foto/lego.jpg", type: "lego" },
+  { url: "src/assets/image/foto/pigeon.jpg", type: "pigeon" },
+  { url: "src/assets/image/foto/skydiver.jpg", type: "skydiver" },
+  { url: "src/assets/image/foto/sportsGirl.jpg", type: "sportsGirl" },
+  { url: "src/assets/image/foto/squirrel.jpg", type: "squirrel" },
+  { url: "src/assets/image/foto/workplace.jpg", type: "workplace" },
 ];
 </script>
 
 <template>
-  <h1 class="name_caption">Коллаж nature через props</h1>
-  <button_back />
-  <div class="workspace workspace--task2">
-    <gallery_el
-      class="picture"
-      v-for="(elem, i) in gallery"
-      :key="'elem' + i"
-      :class="elem.type"
-      :src="elem.url" />
+  <div>
+    <h1 class="name_caption">Наслоение</h1>
+    <button_back />
+    <div class="workspace workspace--task3">
+      <album_el
+        class="photo"
+        v-for="(elem, i) in album"
+        :key="'elem' + i"
+        :class="elem.type"
+        :src="elem.url" />
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import "../styles/mixin.scss";
-.workspace--task2 {
-  // @include size(70%, fit-content);
-  width: 70%;
-  margin: 5% auto;
-  display: grid;
-  grid-gap: 0.5em;
-  // row-gap: 0.5em;
 
-  grid-auto-flow: row dense;
-  grid-template-columns: repeat(3, 1fr);
+.workspace--task3 {
+  @include flex(center, center);
+  margin: 21% auto;
 
-  // grid-template-rows: 1fr 1fr;
-  // grid-template-rows: repeat(2, auto);
-  // grid-template-columns: repeat(auto-fill, 400px); //автозаполнение
-  // grid-template-rows: repeat(auto-fill);
-  // grid-auto-rows: auto;
-  // border: 2px solid rgb(17, 0, 255);
+  .photo {
+    @include size(28.5em, 18.7em);
+    position: absolute;
+  }
+}
+.beach {
+  @include layers(10, auto, auto, -35deg, 1.3);
+}
 
-  .picture {
-    // border: solid 1px red;
-    background-color: aqua;
+.squirrel {
+  @include layers(6, auto, 35%, -61deg, 1.5);
+}
+
+.deer {
+  @include layers(8, auto, auto, -19deg, 1.4);
+}
+
+.lake {
+  @include layers(7, auto, 38%, 41deg, 1.5);
+}
+
+.workplace {
+  @include layers(9, auto, auto, 15deg, 1.4);
+}
+
+.sportsGirl {
+  @include layers(5, auto, auto, -5deg, 1.3);
+}
+
+.skydiver {
+  @include layers(4, auto, auto, 5deg, 1.5);
+}
+.pigeon {
+  @include layers(3, auto, auto, 15deg, 1.3);
+}
+
+.lego {
+  @include layers(2, auto, auto, -35deg, 1.5);
+}
+
+.coffee {
+  @include layers(1, auto, auto, 0, 1.1);
+}
+
+.landscape {
+  @include layers(11, auto, auto, 10deg, 1.5);
+  @include size(50px);
+  // animation: 40s linear infinite rot;
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-.cube {
-  // @include size(31.25rem);
-  // grid-column: 1, 2;
-  // // grid-column: nth-child(2n+1);
-  // grid-row: 1, 3;
-  aspect-ratio: 1 / 1;
+.landscape:hover {
+  animation-play-state: paused;
+  cursor: grabbing;
 }
-
-.horizontal_rectangle {
-  // @include size(63.3rem, 31.25rem);
-  aspect-ratio: 2 / 1;
-  grid-column-end: span 2;
-  // grid-column: 1 / span 2;
-  // grid-row: 2;
-}
-
-.vertical_rectangle {
-  // @include size(31.25rem, 63.3rem);
-  // grid-column: 3;
-  grid-row-end: span 2;
-  // aspect-ratio: 1 / 2;
-}
-
-// .panorama {
-//   // @include size(57.6em, 20em);
-// }
 </style>
