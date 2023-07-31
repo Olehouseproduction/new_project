@@ -6,14 +6,19 @@ import button_back from "./ui-components/button_back.vue";
   <div class="main">
     <div class="workspace workspace--task5">
       <h1 class="name_caption">Game</h1>
-
       <button_back />
+      <!-- <div class="sample">
+        <h2>Hello, {{ name }}</h2>
+        <input type="text" v-model="name" />
+        <button @click="name = ''" :disabled="name.length === 0">X</button>
+      </div> -->
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-// Если мы хотим использовать наши заранее заготовленные mixin,
-// то их надо в начале добавить в этот тимплейт с помощью import
 @import "../styles/mixin.scss";
+.sample {
+  color: aliceblue;
+}
 </style>

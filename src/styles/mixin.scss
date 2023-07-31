@@ -34,8 +34,13 @@
   text-decoration: $text-decoration;
 }
 
-@mixin layers($background-image, $z-index, $right, $left, $rotate, $scale) {
-  background-image: $background-image;
+@mixin layers(
+  $z-index,
+  $right: initial,
+  $left: initial,
+  $rotate: initial,
+  $scale: initial
+) {
   z-index: $z-index;
   right: $right;
   left: $left;

@@ -1,6 +1,6 @@
 <script setup>
 // Импортим компонент
-
+// import { ref } from "vue";
 import button_link from "./ui-components/button_link.vue";
 
 //Cоздаем массив объектов с ключами url и name
@@ -16,10 +16,6 @@ const links = [
 
 <template>
   <div class="main">
-    <!-- <video autoplay loop id="myVideo">
-      <source src="../assets/video/daisy-stock-h264-video.mp4" />
-    </video> -->
-
     <button_link
       v-for="(link, i) in links"
       :key="'link' + i"
@@ -47,17 +43,25 @@ const links = [
 <style lang="scss" scoped>
 @import "src/styles/mixin.scss";
 .main {
-  // background-color: #f3f3f3;
-  background-image: url(../assets/image/3671442.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(hsla(0, 0%, 95.3%, 0.94)),
+      to(hsla(0, 0%, 95.3%, 0.94))
+    ),
+    url(https://uploads-ssl.webflow.com/6359140b3878a7a73023f955/635934446d2865655d814bb0_noise.webp),
+    -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#f3f3f3));
+
   object-fit: contain;
   @include size(100vw, 100vh);
   @include flex(center, center, column);
+  background-image: linear-gradient(
+      180deg,
+      hsla(0, 0%, 95.3%, 0.94),
+      hsla(0, 0%, 95.3%, 0.94)
+    ),
+    url(https://uploads-ssl.webflow.com/6359140b3878a7a73023f955/635934446d2865655d814bb0_noise.webp),
+    linear-gradient(180deg, #f3f3f3, #f3f3f3);
 }
-// #myVideo {
-//   @include size(100%);
-//   object-fit: cover;
-//   position: fixed;
-// }
 </style>

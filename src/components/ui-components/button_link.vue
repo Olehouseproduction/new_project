@@ -21,10 +21,10 @@ const props = defineProps({
   @include size(7.5em, 3.5em);
   @include font(sans-serif, 1em, 700, none);
   @include flex(center, center);
-  background-color: #ffe42c;
+  background-color: #ffd02f;
   color: #050038;
   border-radius: 3px;
-  box-shadow: 10px 10px 20px #1641a0;
+  box-shadow: 10px 10px 20px #4f66aa;
   padding: 1em;
   margin-top: 4vh;
   transition: all 350ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
