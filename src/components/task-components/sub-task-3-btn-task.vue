@@ -1,11 +1,28 @@
 <script setup>
 const props = defineProps({
   name: String,
+  isBlue: Boolean,
+  isRed: Boolean,
+  isPulse: Boolean,
+  isPink: Boolean,
+  isYellow: Boolean,
+  isGreen: Boolean,
+  isInvisible: Boolean,
 });
 </script>
 
 <template>
-  <div class="btn-task">
+  <div
+    class="btn-task"
+    :class="{
+      blue: props.isBlue,
+      red: props.isRed,
+      pulse: props.isPulse,
+      pink: props.isPink,
+      yellow: props.isYellow,
+      green: props.isGreen,
+      invisible: props.isInvisible,
+    }">
     <span>
       {{ props.name }}
     </span>
@@ -47,6 +64,11 @@ const props = defineProps({
 }
 .blue {
   background-color: #47aeff;
+  transition: all 0.5s linear;
+}
+
+.green {
+  background-color: #0cec61;
   transition: all 0.5s linear;
 }
 .red {

@@ -23,7 +23,6 @@ const tasks = reactive([
     name: "Отменяет действие первого, и третий становится желтым",
     handler() {
       tasks[2].isYellow = true;
-      tasks[8].isRed = false;
     },
   },
   {
@@ -110,15 +109,13 @@ function refresh() {
         :name="task.name"
         v-for="(task, i) in tasks"
         :key="'task' + i"
-        :class="{
-          blue: task.isBlue,
-          red: task.isRed,
-          pulse: task.isPulsing,
-          pink: task.isPink,
-          yellow: task.isYellow,
-          green: task.isGreen,
-          invisible: task.isInvisible,
-        }"
+        :is-blue="task.isBlue"
+        :is-red="task.isRed"
+        :is-pulse="task.isPulsing"
+        :is-pink="task.isPink"
+        :is-yellow="task.isYellow"
+        :is-green="task.isGreen"
+        :is-invisible="task.isInvisible"
         @click="task.handler" />
       <br />
       <div class="picture"></div>
@@ -142,7 +139,6 @@ main {
   background-image: url(..//assets/image/bird2.png);
   background-position: center;
   background-repeat: no-repeat;
-
   position: fixed;
   width: 246px;
   height: 246px;
@@ -156,8 +152,7 @@ main {
 }
 
 .fond {
-  background-image: url(../assets/image/sand_2.jpg);
-  background-image: radial-gradient(
+  background: radial-gradient(
     farthest-corner circle at 100% 0%,
     #00dfff 11% 11%,
     #8c00ea 50%,
@@ -165,6 +160,15 @@ main {
   );
 
   background-size: cover;
-  transition: all 350ms linear; // Почему не срабатывает плавность перехода
+  transition: all 1s linear; // Почему не срабатывает плавность перехода?
 }
+
+// .fond.active {
+//   background-color: radial-gradient(
+//     farthest-corner circle at 100% 0%,
+//     #00dfff 11% 11%,
+//     #8c00ea 50%,
+//     #00f3db 84% 84%
+//   );
+// }
 </style>
