@@ -17,5 +17,6 @@ const props = defineProps({
 .inner_img {
   @include size(100%);
   object-fit: cover;
+  cursor: grabbing;
 }
 </style>

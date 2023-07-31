@@ -40,7 +40,6 @@ const gallery = [
       <mobile />
       <tablet />
       <desktop />
-      <!-- <nature_layout /> -->
     </div>
     <div class="workspace workspace--task2">
       <gallery_el
@@ -55,10 +54,6 @@ const gallery = [
 
 <style lang="scss" scoped>
 @import "../styles/mixin.scss";
-
-// .inner {
-
-// }
 
 .workspace--task1 {
   @include size(100%, 60vh);

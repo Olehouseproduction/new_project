@@ -12,37 +12,24 @@ body {
   padding: 0;
   background: #1b2631;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: all 350ms linear;
 }
 
 .name_caption {
   color: white;
   text-align: center;
   padding: 25px;
+  margin: 0;
 }
 
 .main {
   margin: 0 auto;
-  @include size(100vw, 90vh);
+  @include size(100vw, 100vh);
+  transition: all 350ms linear;
 }
 
 .work-space {
   @include size(100vw, 100vh);
   @include flex(center, center);
   margin: 0 auto;
-}
-
-// body.active {
-//   background-image: url(../assets/image/sand_2.jpg);
-//   background-size: cover;
-//   transition: 350ms linear;
-// }
-body.active {
-  background-image: url(../assets/image/sand_2.jpg);
-  background-size: cover;
-  transition: 350ms linear;
-}
-
-body.active2 {
-  background-color: #1b2631;
-  transition: 350ms linear;
 }
