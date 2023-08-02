@@ -6,11 +6,11 @@ import button_link from "./ui-components/button_link.vue";
 //Cоздаем массив объектов с ключами url и name
 
 const links = [
-  { url: "/Task_1", name: "Задание 1" },
-  { url: "/Task_2", name: "Задание 2" },
-  { url: "/Task_3", name: "Задание 3" },
-  { url: "/Task_4", name: "Задание 4" },
-  { url: "/Task_5", name: "Задание 5" },
+  { url: "/Task1", name: "Задание 1" },
+  { url: "/Task2", name: "Задание 2" },
+  { url: "/Task3", name: "Задание 3" },
+  { url: "/Task4", name: "Задание 4" },
+  { url: "/Task5", name: "Задание 5" },
 ];
 </script>
 

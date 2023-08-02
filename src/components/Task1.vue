@@ -1,5 +1,5 @@
 <script setup>
-import button_back from "./ui-components/button_back.vue";
+import Header from "./ui-components/Header.vue";
 import mobile from "./task-components/sub-task-1.1-mobile.vue";
 import tablet from "./task-components/sub-task-1.2-tablet.vue";
 import desktop from "./task-components/sub-task-1.3-desktop.vue";
@@ -7,7 +7,7 @@ import gallery_el from "./task-components/sub-task-1.4-gallery.vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-import item from "./task-components/sub-task-1-5-gallery-Item.vue";
+// import item from "./task-components/sub-task-1-5-gallery-Item.vue";
 
 const gallery = [
   { url: "src/assets/image/8.jpg", type: "vertical_rectangle" },
@@ -38,8 +38,7 @@ const gallery = [
 
 <template>
   <div class="inner">
-    <h1 class="name_caption">Позиционирование</h1>
-    <button_back />
+    <Header name="Позиционирование" />
     <div class="workspace workspace--task1">
       <mobile />
       <tablet />

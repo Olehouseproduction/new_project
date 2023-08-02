@@ -1,9 +1,9 @@
 <script setup>
 import { reactive } from "vue";
-import button_back from "./ui-components/button_back.vue";
 import btn_task from "./task-components/sub-task-3-btn-task.vue";
+import Header from "./ui-components/Header.vue";
 
-const surprise = reactive({ example: false });
+const surprise = reactive({ example: false }); //изменить названия
 
 const tasks = reactive([
   {
@@ -23,6 +23,7 @@ const tasks = reactive([
     name: "Отменяет действие первого, и третий становится желтым",
     handler() {
       tasks[2].isYellow = true;
+      tasks[8].isRed = false;
     },
   },
   {
@@ -49,7 +50,7 @@ const tasks = reactive([
     },
   },
   {
-    name: "Добавляет пульсацию рандомному",
+    name: "Добавляет пульсацию рандомному", //Рандомные кнопки доработать
     handler() {
       function checkNotPulsing(btn) {
         return !btn.isPulsing;
@@ -60,19 +61,19 @@ const tasks = reactive([
     },
   },
   {
-    name: "Делает рандомного синим",
+    name: "Делает рандомного синим", //Рандомные кнопки доработать
     handler() {
       function checkNotBlue(btn) {
         return !btn.isBlue;
       }
       const notBlueBtn = tasks.filter(checkNotBlue);
-      const rand = Math.floor(Math.random() * notBlueBtn.length);
+      const rand = Math.floor(Math.random() * notBlueBtn.length); //Вынести в отдельную функцию общий код рандома
       notBlueBtn[rand].isBlue = true;
       notBlueBtn[rand].isPink = false;
     },
   },
   {
-    name: "Делает невидимым рандомного",
+    name: "Делает невидимым рандомного", //Рандомные кнопки доработать
     handler() {
       function checkNotInvisible(btn) {
         return !btn.isInvisible;
@@ -101,10 +102,12 @@ function refresh() {
 
 <template>
   <div class="main" :class="{ fond: surprise.example }">
-    <h1 class="name_caption">Смена классов</h1>
-    <button_back />
-    <div class="workspace workspace--task4">
-      <btn_task name="Сброс" @click="refresh" />
+    <Header name="Смена классов" />
+    <div class="reset-wrap">
+      <btn_task class="reset" name="Сброс" @click="refresh" />
+    </div>
+    <div class="workspace">
+      <!--main+компоненты - проверить-->
       <btn_task
         :name="task.name"
         v-for="(task, i) in tasks"
@@ -119,6 +122,7 @@ function refresh() {
         @click="task.handler" />
       <br />
       <div class="picture"></div>
+      <!-- <img src="images/keks.jpg" alt="Рыжий кот Кекс лежит у ноутбука."  -->
     </div>
   </div>
 </template>
@@ -126,15 +130,23 @@ function refresh() {
 <style lang="scss" scoped>
 @import "../styles/mixin.scss";
 
-.workspace--task4 {
+.reset-wrap {
+  display: flex;
+  .reset {
+    background-color: #ffffff;
+    height: 5em;
+    margin-left: auto;
+    margin-right: 2vw;
+    padding: 0 50px;
+    width: auto;
+  }
+}
+.workspace {
   @include size(70%, 50%);
   @include flex(space-around, center);
-  margin: 9% auto;
+  margin: 4% auto;
 }
 
-main {
-  transition: all 350ms linear;
-}
 .picture {
   background-image: url(..//assets/image/bird2.png);
   background-position: center;
@@ -152,23 +164,7 @@ main {
 }
 
 .fond {
-  background: radial-gradient(
-    farthest-corner circle at 100% 0%,
-    #00dfff 11% 11%,
-    #8c00ea 50%,
-    #00f3db 84% 84%
-  );
-
+  background-color: purple;
   background-size: cover;
-  transition: all 1s linear; // Почему не срабатывает плавность перехода?
 }
-
-// .fond.active {
-//   background-color: radial-gradient(
-//     farthest-corner circle at 100% 0%,
-//     #00dfff 11% 11%,
-//     #8c00ea 50%,
-//     #00f3db 84% 84%
-//   );
-// }
 </style>

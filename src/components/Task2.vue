@@ -1,5 +1,5 @@
 <script setup>
-import button_back from "./ui-components/button_back.vue";
+import Header from "./ui-components/Header.vue";
 import album_el from "./task-components/sub-task-2-album.vue";
 import { onMounted, onUpdated, reactive } from "vue";
 
@@ -38,8 +38,7 @@ function func1() {
 
 <template>
   <div>
-    <h1 class="name_caption">Наслоение</h1>
-    <button_back />
+    <Header name="Наслоение" />
     <div class="workspace workspace--task3">
       <album_el
         class="photo"

@@ -1,9 +1,10 @@
 <script setup>
-import button_back from "./ui-components/button_back.vue";
+import Header from "./ui-components/Header.vue";
 </script>
 
 <template>
   <div class="main">
+    <Header name="Props" />
     <div class="workspace workspace--task5">
       <h1 class="name_caption"></h1>
 

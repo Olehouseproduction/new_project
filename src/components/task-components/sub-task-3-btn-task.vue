@@ -23,9 +23,7 @@ const props = defineProps({
       green: props.isGreen,
       invisible: props.isInvisible,
     }">
-    <span>
-      {{ props.name }}
-    </span>
+    {{ props.name }}
   </div>
 </template>
 
@@ -37,16 +35,13 @@ const props = defineProps({
   padding: 6px;
   @include flex(center, center);
   border-radius: 1.5em;
-  margin-left: 1.5em;
+  margin-left: 1.5em; //Решить с помощью флексов
   background-color: #f1f8fb;
-  transform: scale(1);
-  transition: all 350ms ease-in;
+  transition: background-color 350ms ease-in;
+  scale: 1;
   box-shadow: 8px 10px 5px 2px #7a7911;
-  cursor: pointer;
-  span {
-    text-align: center;
-  }
-
+  cursor: pointer; // сделать кнопки
+  text-align: center;
   &:hover {
     animation: pulse 1.7s infinite;
   }
@@ -57,23 +52,19 @@ const props = defineProps({
 
 .green {
   background-color: #0cec61;
-  transition: all 0.5s linear;
 }
 .yellow {
   background-color: #ffd02f;
 }
 .blue {
   background-color: #47aeff;
-  transition: all 0.5s linear;
 }
 
 .green {
   background-color: #0cec61;
-  transition: all 0.5s linear;
 }
 .red {
   background-color: #fc2335;
-  transition: all 0.5s linear;
 }
 
 .invisible {
@@ -87,23 +78,13 @@ const props = defineProps({
 
 @keyframes pulse {
   0% {
-    transform: scale(1);
+    scale: 1;
   }
   50% {
-    transform: scale(1.2);
+    scale: 1.2;
   }
   100% {
-    transform: scale(1);
+    scale: 1;
   }
-}
-
-.btn-task:first-child {
-  @include position(absolute, $right: 8%, $top: 20%);
-  background-color: #ffffff;
-  @include size(9em, 5em);
-}
-
-main {
-  transition: all 350ms linear;
 }
 </style>
