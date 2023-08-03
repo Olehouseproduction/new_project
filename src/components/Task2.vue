@@ -1,6 +1,6 @@
 <script setup>
 import Header from "./ui-components/Header.vue";
-import album_el from "./task-components/sub-task-2-album.vue";
+import Album from "./task-components/SubTask2Album.vue";
 import { onMounted, onUpdated, reactive } from "vue";
 
 const surprise = reactive({ id: -1 });
@@ -24,15 +24,15 @@ const album = [
 //   picture.addEventListener("mouseover", func);
 //   picture.addEventListener("mouseout", func1);
 
-function func() {
-  picture.classList.add("active");
-  console.log("Курсор над картинкой");
-}
+// function func() {
+//   picture.classList.add("active");
+//   console.log("Курсор над картинкой");
+// }
 
-function func1() {
-  picture.classList.remove("active");
-  console.log("Курсор в другом месте");
-}
+// function func1() {
+//   picture.classList.remove("active");
+//   console.log("Курсор в другом месте");
+// }
 // });
 </script>
 
@@ -40,7 +40,7 @@ function func1() {
   <div>
     <Header name="Наслоение" />
     <div class="workspace workspace--task3">
-      <album_el
+      <Album
         class="photo"
         v-for="(elem, i) in album"
         @mouseover="surprise.id = i"
@@ -58,13 +58,10 @@ function func1() {
 .active {
   // @include layers(111, auto, auto, 0deg, 2.5);
   border: solid red 1px;
-  scale: 2;
   z-index: 20000;
-  transform: scale(1.5);
-
-  transform: rotate(-360deg);
+  scale: 1.5;
+  rotate: -360deg;
   transition: all 0.8s ease 0s;
-
   position: absolute;
 }
 
@@ -133,18 +130,4 @@ function func1() {
 .coffee {
   @include layers(1, auto, auto, 0, 1);
 }
-
-// @keyframes rot {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
-
-// .landscape:hover {
-//   animation-play-state: paused;
-//   cursor: grabbing;
-// }
 </style>

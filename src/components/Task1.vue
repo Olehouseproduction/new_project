@@ -1,9 +1,9 @@
 <script setup>
 import Header from "./ui-components/Header.vue";
-import mobile from "./task-components/sub-task-1.1-mobile.vue";
-import tablet from "./task-components/sub-task-1.2-tablet.vue";
-import desktop from "./task-components/sub-task-1.3-desktop.vue";
-import gallery_el from "./task-components/sub-task-1.4-gallery.vue";
+import Mobile from "./task-components/Subtask1Mobile.vue";
+import Tablet from "./task-components/Subtask1Tablet.vue";
+import Desktop from "./task-components/Subtask1Desktop.vue";
+import GalleryElem from "./task-components/Subtask1Gallery.vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -40,12 +40,12 @@ const gallery = [
   <div class="inner">
     <Header name="Позиционирование" />
     <div class="workspace workspace--task1">
-      <mobile />
-      <tablet />
-      <desktop />
+      <Mobile />
+      <Tablet />
+      <Desktop />
     </div>
     <div class="workspace workspace--task2">
-      <gallery_el
+      <GalleryElem
         class="picture"
         v-for="(elem, i) in gallery"
         :key="'elem' + i"

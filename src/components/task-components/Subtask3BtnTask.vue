@@ -13,7 +13,7 @@ const props = defineProps({
 
 <template>
   <div
-    class="btn-task"
+    class="BtnTask"
     :class="{
       blue: props.isBlue,
       red: props.isRed,
@@ -30,7 +30,7 @@ const props = defineProps({
 <style lang="scss" scoped>
 @import "./../../styles/mixin.scss";
 
-.btn-task {
+.BtnTask {
   @include size(10em, 9em);
   padding: 6px;
   @include flex(center, center);

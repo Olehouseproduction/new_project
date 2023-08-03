@@ -1,6 +1,6 @@
 <script setup>
 import { reactive } from "vue";
-import btn_task from "./task-components/sub-task-3-btn-task.vue";
+import BtnTask from "./task-components/Subtask3BtnTask.vue";
 import Header from "./ui-components/Header.vue";
 
 const surprise = reactive({ example: false }); //изменить названия
@@ -104,11 +104,11 @@ function refresh() {
   <div class="main" :class="{ fond: surprise.example }">
     <Header name="Смена классов" />
     <div class="reset-wrap">
-      <btn_task class="reset" name="Сброс" @click="refresh" />
+      <BtnTask class="reset" name="Сброс" @click="refresh" />
     </div>
     <div class="workspace">
       <!--main+компоненты - проверить-->
-      <btn_task
+      <BtnTask
         :name="task.name"
         v-for="(task, i) in tasks"
         :key="'task' + i"
