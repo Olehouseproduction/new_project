@@ -164,7 +164,8 @@ function refresh() {
 }
 
 .fond {
-  background-color: purple;
+  background-image: url(../assets/image/sand2.jpg);
+  // background-color: purple;
   background-size: cover;
 }
 </style>
