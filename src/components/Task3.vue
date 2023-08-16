@@ -157,7 +157,7 @@ function refresh() {
         :is-invisible="task.isInvisible"
         @click="task.handler" />
       <br />
-      <div class="picture">
+      <div id="picture">
         <!-- <img src="../assets/image/bird2.png" alt="Yellow bird" /> -->
       </div>
     </div>
@@ -185,7 +185,7 @@ function refresh() {
   gap: 1.7rem;
 }
 
-.picture {
+#picture {
   background-image: url(..//assets/image/bird2.png);
   background-position: center;
   background-repeat: no-repeat;
