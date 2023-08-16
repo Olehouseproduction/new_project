@@ -39,12 +39,12 @@ const gallery = [
 <template>
   <div class="inner">
     <Header name="Позиционирование" />
-    <div class="workspace workspace--task1">
+    <div class="workspace--1">
       <Mobile />
       <Tablet />
       <Desktop />
     </div>
-    <div class="workspace workspace--task2">
+    <div class="workspace--2">
       <GalleryElem
         class="picture"
         v-for="(elem, i) in gallery"
@@ -58,13 +58,13 @@ const gallery = [
 <style lang="scss" scoped>
 @import "../styles/mixin.scss";
 
-.workspace--task1 {
+.workspace--1 {
   @include size(100%, 60vh);
   @include flex(space-evenly, center, row);
   text-transform: uppercase;
 }
 
-.workspace--task2 {
+.workspace--2 {
   width: 80%;
   margin: 5% auto;
   display: grid;

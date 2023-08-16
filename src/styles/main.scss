@@ -21,12 +21,6 @@ body {
   transition: all 350ms linear;
 }
 
-.work-space {
-  @include size(100vw, 100vh);
-  @include flex(center, center);
-  margin: 0 auto;
-}
-
 .name_caption {
   color: #ffffff;
 }

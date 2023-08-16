@@ -5,7 +5,7 @@ import Header from "./ui-components/Header.vue";
 <template>
   <div class="main">
     <Header name="Game" />
-    <div class="workspace workspace--task5"></div>
+    <div class="workspace--task5"></div>
   </div>
 </template>
 

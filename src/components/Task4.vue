@@ -4,12 +4,8 @@ import Header from "./ui-components/Header.vue";
 
 <template>
   <div class="main">
-    <Header name="Props" />
-    <div class="workspace workspace--task5">
-      <h1 class="name_caption"></h1>
-
-      <button_back />
-    </div>
+    <Header name="Landing Page" />
+    <div class="workspace--task4"></div>
   </div>
 </template>
 

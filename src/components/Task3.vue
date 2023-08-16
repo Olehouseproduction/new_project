@@ -3,7 +3,7 @@ import { reactive } from "vue";
 import BtnTask from "./task-components/Subtask3BtnTask.vue";
 import Header from "./ui-components/Header.vue";
 
-const surprise = reactive({ example: false }); //изменить названия
+const change = reactive({ context: false });
 
 const tasks = reactive([
   {
@@ -37,7 +37,7 @@ const tasks = reactive([
   {
     name: "Меняет цвет задника",
     handler() {
-      surprise.example = true;
+      change.context = true;
     },
   },
   {
@@ -49,41 +49,78 @@ const tasks = reactive([
       });
     },
   },
+
   {
-    name: "Добавляет пульсацию рандомному", //Рандомные кнопки доработать
+    name: "Добавляет пульсацию рандомному",
     handler() {
-      function checkNotPulsing(btn) {
-        return !btn.isPulsing;
-      }
-      const notPulseBtn = tasks.filter(checkNotPulsing);
-      const rand = Math.floor(Math.random() * notPulseBtn.length);
-      notPulseBtn[rand].isPulsing = true;
+      handleRandomChange(tasks, "isPulsing");
     },
   },
   {
-    name: "Делает рандомного синим", //Рандомные кнопки доработать
+    name: "Делает рандомного синим",
     handler() {
-      function checkNotBlue(btn) {
-        return !btn.isBlue;
-      }
-      const notBlueBtn = tasks.filter(checkNotBlue);
-      const rand = Math.floor(Math.random() * notBlueBtn.length); //Вынести в отдельную функцию общий код рандома
-      notBlueBtn[rand].isBlue = true;
-      notBlueBtn[rand].isPink = false;
+      handleRandomChange(tasks, "isBlue");
+      // handleRandomChange(tasks, "isPink", false);
     },
   },
   {
-    name: "Делает невидимым рандомного", //Рандомные кнопки доработать
+    name: "Делает невидимым рандомного",
     handler() {
-      function checkNotInvisible(btn) {
-        return !btn.isInvisible;
-      }
-      const notInvisBtn = tasks.filter(checkNotInvisible);
-      const rand = Math.floor(Math.random() * notInvisBtn.length);
-      notInvisBtn[rand].isInvisible = true;
+      handleRandomChange(tasks, "isInvisible");
     },
   },
 ]);
+
+// Функция для генерации случайного индекса
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
+}
+
+// Функция для обработки рандомных изменений
+function handleRandomChange(buttons, colorToSet) {
+  const notColoredBtn = buttons.filter((btn) => !btn[colorToSet]);
+  if (notColoredBtn.length > 0) {
+    const randIndex = getRandomIndex(notColoredBtn);
+    notColoredBtn[randIndex][colorToSet] = true;
+  }
+}
+
+//   {
+//     name: "Добавляет пульсацию рандомному", //Рандомные кнопки доработать
+//     handler() {
+//       function checkNotPulsing(btn) {
+//         return !btn.isPulsing;
+//       }
+//       const notPulseBtn = tasks.filter(checkNotPulsing);
+//       const rand = Math.floor(Math.random() * notPulseBtn.length);
+//       notPulseBtn[rand].isPulsing = true;
+//       console.log("Обработчик клика для рандомного");
+//     },
+//   },
+//   {
+//     name: "Делает рандомного синим", //Рандомные кнопки доработать
+//     handler() {
+//       function checkNotBlue(btn) {
+//         return !btn.isBlue;
+//       }
+//       const notBlueBtn = tasks.filter(checkNotBlue);
+//       const rand = Math.floor(Math.random() * notBlueBtn.length); //Вынести в отдельную функцию общий код рандома
+//       notBlueBtn[rand].isBlue = true;
+//       notBlueBtn[rand].isPink = false;
+//     },
+//   },
+//   {
+//     name: "Делает невидимым рандомного", //Рандомные кнопки доработать
+//     handler() {
+//       function checkNotInvisible(btn) {
+//         return !btn.isInvisible;
+//       }
+//       const notInvisBtn = tasks.filter(checkNotInvisible);
+//       const rand = Math.floor(Math.random() * notInvisBtn.length);
+//       notInvisBtn[rand].isInvisible = true;
+//     },
+//   },
+// ]);
 
 function refresh() {
   tasks.forEach((item) => {
@@ -96,18 +133,17 @@ function refresh() {
     item.isInvisible = false;
     item.isActive = false;
   });
-  surprise.example = false;
+  change.context = false;
 }
 </script>
 
 <template>
-  <div class="main" :class="{ fond: surprise.example }">
+  <div class="main" :class="{ fond: change.context }">
     <Header name="Смена классов" />
     <div class="reset-wrap">
       <BtnTask class="reset" name="Сброс" @click="refresh" />
     </div>
-    <div class="workspace">
-      <!--main+компоненты - проверить-->
+    <div class="workspace--task3">
       <BtnTask
         :name="task.name"
         v-for="(task, i) in tasks"
@@ -121,8 +157,9 @@ function refresh() {
         :is-invisible="task.isInvisible"
         @click="task.handler" />
       <br />
-      <div class="picture"></div>
-      <!-- <img src="images/keks.jpg" alt="Рыжий кот Кекс лежит у ноутбука."  -->
+      <div class="picture">
+        <!-- <img src="../assets/image/bird2.png" alt="Yellow bird" /> -->
+      </div>
     </div>
   </div>
 </template>
@@ -141,10 +178,11 @@ function refresh() {
     width: auto;
   }
 }
-.workspace {
+.workspace--task3 {
   @include size(70%, 50%);
   @include flex(space-around, center);
   margin: 4% auto;
+  gap: 1.7rem;
 }
 
 .picture {

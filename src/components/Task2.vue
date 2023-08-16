@@ -23,7 +23,7 @@ const album = [
 <template>
   <div>
     <Header name="Наслоение" />
-    <div class="workspace workspace--task3">
+    <div class="workspace--task2">
       <Album
         class="photo"
         v-for="(elem, i) in album"
@@ -39,7 +39,7 @@ const album = [
 <style lang="scss" scoped>
 @import "../styles/mixin.scss";
 
-.workspace--task3 {
+.workspace--task2 {
   @include flex(center, center);
   margin: 16% auto;
 
