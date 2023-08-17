@@ -3,7 +3,7 @@ import { reactive } from "vue";
 import BtnTask from "./task-components/Subtask3BtnTask.vue";
 import Header from "./ui-components/Header.vue";
 
-const change = reactive({ context: false });
+const change = reactive({ context: false, numberOfButton: -1 });
 
 const tasks = reactive([
   {
@@ -60,7 +60,6 @@ const tasks = reactive([
     name: "Делает рандомного синим",
     handler() {
       handleRandomChange(tasks, "isBlue");
-      // handleRandomChange(tasks, "isPink", false);
     },
   },
   {
@@ -71,12 +70,10 @@ const tasks = reactive([
   },
 ]);
 
-// Функция для генерации случайного индекса
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
-// Функция для обработки рандомных изменений
 function handleRandomChange(buttons, colorToSet) {
   const notColoredBtn = buttons.filter((btn) => !btn[colorToSet]);
   if (notColoredBtn.length > 0) {
@@ -84,43 +81,6 @@ function handleRandomChange(buttons, colorToSet) {
     notColoredBtn[randIndex][colorToSet] = true;
   }
 }
-
-//   {
-//     name: "Добавляет пульсацию рандомному", //Рандомные кнопки доработать
-//     handler() {
-//       function checkNotPulsing(btn) {
-//         return !btn.isPulsing;
-//       }
-//       const notPulseBtn = tasks.filter(checkNotPulsing);
-//       const rand = Math.floor(Math.random() * notPulseBtn.length);
-//       notPulseBtn[rand].isPulsing = true;
-//       console.log("Обработчик клика для рандомного");
-//     },
-//   },
-//   {
-//     name: "Делает рандомного синим", //Рандомные кнопки доработать
-//     handler() {
-//       function checkNotBlue(btn) {
-//         return !btn.isBlue;
-//       }
-//       const notBlueBtn = tasks.filter(checkNotBlue);
-//       const rand = Math.floor(Math.random() * notBlueBtn.length); //Вынести в отдельную функцию общий код рандома
-//       notBlueBtn[rand].isBlue = true;
-//       notBlueBtn[rand].isPink = false;
-//     },
-//   },
-//   {
-//     name: "Делает невидимым рандомного", //Рандомные кнопки доработать
-//     handler() {
-//       function checkNotInvisible(btn) {
-//         return !btn.isInvisible;
-//       }
-//       const notInvisBtn = tasks.filter(checkNotInvisible);
-//       const rand = Math.floor(Math.random() * notInvisBtn.length);
-//       notInvisBtn[rand].isInvisible = true;
-//     },
-//   },
-// ]);
 
 function refresh() {
   tasks.forEach((item) => {
@@ -134,6 +94,7 @@ function refresh() {
     item.isActive = false;
   });
   change.context = false;
+  change.numberOfButton = -1;
 }
 </script>
 
@@ -155,11 +116,16 @@ function refresh() {
         :is-yellow="task.isYellow"
         :is-green="task.isGreen"
         :is-invisible="task.isInvisible"
-        @click="task.handler" />
+        @click="
+          () => {
+            task.handler();
+            change.numberOfButton = i;
+          }
+        " />
       <br />
-      <div id="picture">
-        <!-- <img src="../assets/image/bird2.png" alt="Yellow bird" /> -->
-      </div>
+      <div id="picture" :class="'button' + change.numberOfButton"></div>
+      <!-- {{ change.numberOfButton }}
+      {{ "button" + change.numberOfButton }} -->
     </div>
   </div>
 </template>
@@ -186,7 +152,7 @@ function refresh() {
 }
 
 #picture {
-  background-image: url(..//assets/image/bird2.png);
+  background-image: url(../assets/image/bird2.png);
   background-position: center;
   background-repeat: no-repeat;
   position: fixed;
@@ -199,6 +165,34 @@ function refresh() {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2),
     inset 0 4px 5px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(0, 0, 0, 0.6);
   object-fit: contain;
+
+  &.button0 {
+    background-image: url(../assets/image/small/red.jpg);
+  }
+  &.button1 {
+    background-image: url(../assets/image/small/green.jpg);
+  }
+  &.button2 {
+    background-image: url(../assets/image/bird2.png);
+  }
+  &.button3 {
+    background-image: url(../assets/image/small/green1.jpg);
+  }
+  &.button4 {
+    background-image: url(../assets/image/small/back.jpg);
+  }
+  &.button5 {
+    background-image: url(../assets/image/small/pink.jpg);
+  }
+  &.button6 {
+    background-image: url(../assets/image/small/pulse.jpg);
+  }
+  &.button7 {
+    background-image: url(../assets/image/small/blue.jpg);
+  }
+  &.button8 {
+    background-image: url(../assets/image/small/invis.jpg);
+  }
 }
 
 .fond {
@@ -207,3 +201,7 @@ function refresh() {
   background-size: cover;
 }
 </style>
+
+<!-- ../assets/image/small/green1.jpg -->
+<!-- ../assets/image/small/ex.jpg -->
+<!-- ../assets/image/small/beauti.jpg -->

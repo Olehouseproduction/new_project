@@ -10,12 +10,6 @@ const props = defineProps({
   isGreen: Boolean,
   isInvisible: Boolean,
 });
-
-const emits = defineEmits();
-
-function handleButtonClick() {
-  emits("click");
-}
 </script>
 
 <template>
@@ -29,8 +23,7 @@ function handleButtonClick() {
       yellow: props.isYellow,
       green: props.isGreen,
       invisible: props.isInvisible,
-    }"
-    @click="handleButtonClick">
+    }">
     {{ props.name }}
   </button>
 </template>
