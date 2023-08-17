@@ -1,15 +1,26 @@
+@import "./mixin.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
+  @include size(100%);
   margin: 0 auto;
   padding: 0;
   background: #1b2631;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &.grabbing * {
-    cursor: grabbing !important;
-  }
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: all 350ms linear;
+}
+
+.main {
+  margin: 0 auto;
+  @include size(100vw, 100vh);
+  transition: all 350ms linear;
+}
+
+.name_caption {
+  color: #ffffff;
 }

@@ -1,69 +1,67 @@
 <script setup>
-import { ref } from "vue";
+// Импортим компонент
+// import { ref } from "vue";
+import button_link from "./ui-components/ButtonLink.vue";
 
-const count = ref(0);
+//Cоздаем массив объектов с ключами url и name
+
+const links = [
+  { url: "/Task1", name: "Задание 1" },
+  { url: "/Task2", name: "Задание 2" },
+  { url: "/Task3", name: "Задание 3" },
+  { url: "/Task4", name: "Задание 4" },
+  { url: "/Task5", name: "Задание 5" },
+];
 </script>
 
 <template>
   <div class="main">
-    <!-- кнопки перехода по нашим заданиям-->
-    <router-link class="button-rout" to="/task_1">Задание 1</router-link>
-    <router-link class="button-rout" to="/task_2">Задание 2</router-link>
-    <router-link class="button-rout" to="/task_3">Задание 3</router-link>
-    <router-link class="button-rout" to="/task_4">Задание 4</router-link>
-    <router-link class="button-rout" to="/task_5">Задание 5</router-link>
-    <div>
-      <router-link class="button-rout" to="/task_5">Задание 6</router-link>
-    </div>
+    <button_link
+      v-for="(link, i) in links"
+      :key="'link' + i"
+      :to="link.url"
+      :name="link.name" />
+    <!-- Указываем пропсы. Чем они являются? 
+    :to="link.url" Из массива из каждого элемента, который link, мы брали ключ url и отправляли его в :to. Также с name
+    -->
+    <!-- 1. v-for - это цикл, позволяющий перебирать объекты; 
+      link - название может быть любым;
+      i - количество итераций; 
+      in links - указывает куда надо смотреть (в массив links ); 
+      Благодаря этому, если в массив будут добавляться объекты, количество кнопок будет автоматически увеличиваться и наоборот.
+      :key - уникальный идентификатор к каждой строке массива (к каждому элементу)
+      :key="'link' + i" - каждая кнопка будет вести к первому заданию. Но нам нужно, чтобы использовались ключи, указанные в массиве.
+      Возвращаемся в компонент button-link и прописываем prop'ы.
+    -->
+    <!-- <router-link class="button-rout" to="/task_1">name</router-link> -->
+    <!--  Это модицифицируется. Чтобы использовать переменные - мы меняем запись
+    Теперь мы можем обращаться к пропсам по ключу. После этого, нам надо указать эти пропсы в Lobby
+    -->
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import "../styles/mixin.scss";
+@import "src/styles/mixin.scss";
 .main {
-  background: #1b2631;
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(hsla(0, 0%, 95.3%, 0.94)),
+      to(hsla(0, 0%, 95.3%, 0.94))
+    ),
+    url(https://uploads-ssl.webflow.com/6359140b3878a7a73023f955/635934446d2865655d814bb0_noise.webp),
+    -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#f3f3f3));
+
+  object-fit: contain;
   @include size(100vw, 100vh);
-  margin: 0 auto;
   @include flex(center, center, column);
-  position: relative;
-  .button-rout {
-    background-color: white;
-    &:hover {
-      transform: scale(2);
-    }
-  }
-  div {
-    .button-rout {
-      background-color: darkolivegreen;
-    }
-  }
-}
-
-.button-rout {
-  text-decoration: none;
-  display: inline-block;
-  margin: 10px 20px;
-  padding: 20px 60px;
-  position: relative;
-  border: 2px solid #f1c40f;
-  color: #f1c40f;
-  font-family: "Montserrat", sans-serif;
-  transition: 0.4s;
-  &:after {
-    content: "";
-    @include position(absolute, 0, 0, 0, 0);
-    @include position(absolute, $top: 10px, $left: 10px);
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    border: 2px solid rgba(0, 0, 0, 0);
-    transition: 0.4s;
-  }
-}
-
-.button-rout:hover:after {
-  border-color: #f1c40f;
-  width: calc(100% - 10px);
-  height: calc(100% + 10px);
+  background-image: linear-gradient(
+      180deg,
+      hsla(0, 0%, 95.3%, 0.94),
+      hsla(0, 0%, 95.3%, 0.94)
+    ),
+    url(https://uploads-ssl.webflow.com/6359140b3878a7a73023f955/635934446d2865655d814bb0_noise.webp),
+    linear-gradient(180deg, #f3f3f3, #f3f3f3);
 }
 </style>
