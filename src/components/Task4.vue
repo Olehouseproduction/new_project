@@ -1,41 +1,81 @@
-<script setup>
-import Header from "./ui-components/Header.vue";
-
-import { ref, computed } from "vue";
-const userName = ref("");
-const showMessage = ref(false);
-
-const greeting = computed(() => {
-  if (userName.value) {
-    return `Привет, ${userName.value}!`;
-  } else {
-    return "Введите ваше имя.";
-  }
-});
-
-const showGreeting = () => {
-  showMessage.value = true;
-};
-</script>
 <template>
   <div class="main">
     <Header name="Vue3" />
     <div class="workspace--task4">
       <body>
         <div id="app-container">
-          <p v-if="showMessage">{{ greeting }}</p>
-          <template v-else>
-            <form @submit.prevent="showGreeting">
+          <template v-if="!showGame">
+            <form @submit.prevent="startGame">
               <label for="nameInput">Введите ваше имя:</label>
-              <input type="text" id="nameInput" v-model="userName" />
-              <button type="submit">Отправить</button>
+              <input type="text" id="nameInput" v-model="userNameInput" />
+              <button type="submit">Начать игру</button>
             </form>
+          </template>
+          <template v-else>
+            <template v-if="!showResults">
+              <p>
+                Привет, {{ userName }}! Мы подготовили игру на сложение.
+                Погнали!
+              </p>
+              <div v-for="(question, index) in questions" :key="index">
+                <label :for="`answer-${index}`">{{ question.text }}</label>
+                <input :id="`answer-${index}`" v-model="question.answer" />
+              </div>
+              <button @click="checkAnswers">Проверить ответы</button>
+            </template>
+            <div v-else>
+              <div v-for="(result, index) in gameResults" :key="index">
+                <p>{{ result }}</p>
+              </div>
+              <p>Спасибо за игру!</p>
+            </div>
           </template>
         </div>
       </body>
     </div>
   </div>
 </template>
+
+<script setup>
+import Header from "./ui-components/Header.vue";
+import { ref } from "vue";
+
+const userNameInput = ref("");
+const userName = ref("");
+const showGame = ref(false);
+const showResults = ref(false);
+const gameResults = ref([]);
+const questions = ref([]);
+
+const startGame = () => {
+  userName.value = userNameInput.value;
+  showGame.value = true;
+  showResults.value = false;
+  gameResults.value = [];
+  questions.value = [
+    { text: `Сколько будет 2 + 2?`, answer: "" },
+    { text: `Сколько будет 5 + 7?`, answer: "" },
+    { text: `Сколько будет 10 + 15?`, answer: "" },
+    { text: `Сколько будет 8 + 3?`, answer: "" },
+    { text: `Сколько будет 6 + 9?`, answer: "" },
+  ];
+};
+
+const checkAnswers = () => {
+  gameResults.value = [];
+  questions.value.forEach((question, index) => {
+    const answer = parseInt(question.answer);
+    if (!isNaN(answer) && answer === correctAnswers[index]) {
+      gameResults.value.push(`Верно!`);
+    } else {
+      gameResults.value.push(`Неверно!`);
+    }
+  });
+  showResults.value = true;
+};
+
+const correctAnswers = [4, 12, 25, 11, 15];
+</script>
 
 <style lang="scss" scoped>
 @import "../styles/mixin.scss";
