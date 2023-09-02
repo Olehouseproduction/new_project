@@ -1,128 +1,128 @@
 <script setup>
 import Header from "./ui-components/Header.vue";
-// // оптимизация
-// // конфиг переменных которые используются для работы приложения
-// let trashListFresh = [
-//   { type: "household", url: "image/garbage/apple.png" },
-//   { type: "dangerous", url: "image/garbage/battery.png" },
-//   { type: "recyclables", url: "image/garbage/glass.png" },
-//   { type: "recyclables", url: "image/garbage/paper.png" },
-//   { type: "mixed", url: "image/garbage/boots.png" },
-//   { type: "mixed", url: "image/garbage/cottonBuds.png" },
-//   { type: "mixed", url: "image/garbage/glue.png" },
-//   { type: "recyclables", url: "image/garbage/milkCarton.png" },
-//   { type: "recyclables", url: "image/garbage/tin.png" },
-//   { type: "mixed", url: "image/garbage/tube.png" },
-//   { type: "mixed", url: "image/garbage/patch.png" },
-// ];
+// оптимизация
+// конфиг переменных которые используются для работы приложения
+let trashListFresh = [
+  { type: "household", url: "image/garbage/apple.png" },
+  { type: "dangerous", url: "image/garbage/battery.png" },
+  { type: "recyclables", url: "image/garbage/glass.png" },
+  { type: "recyclables", url: "image/garbage/paper.png" },
+  { type: "mixed", url: "image/garbage/boots.png" },
+  { type: "mixed", url: "image/garbage/cottonBuds.png" },
+  { type: "mixed", url: "image/garbage/glue.png" },
+  { type: "recyclables", url: "image/garbage/milkCarton.png" },
+  { type: "recyclables", url: "image/garbage/tin.png" },
+  { type: "mixed", url: "image/garbage/tube.png" },
+  { type: "mixed", url: "image/garbage/patch.png" },
+];
 
-// let elemImg = document.createElement("img");
-// elemImg.classList.add("go-js");
-// let winPoint = 0;
-// let losePoint = 0;
-// let upPoint = document.querySelector(".win-js");
-// let downPoint = document.querySelector(".lose-js");
-// let yes = document.querySelector(".win");
-// let no = document.querySelector(".lose");
-// let headline = document.querySelector(".caption");
-// let trashPicture = document.querySelector(".trash_picture");
-// let start = document.querySelector(".button_begin");
-// let dumpster = document.querySelectorAll(".dumpster");
-// let trashList;
-// let trash;
+let elemImg = document.createElement("img");
+elemImg.classList.add("go-js");
+let winPoint = 0;
+let losePoint = 0;
+let upPoint = document.querySelector(".win-js");
+let downPoint = document.querySelector(".lose-js");
+let yes = document.querySelector(".win");
+let no = document.querySelector(".lose");
+let headline = document.querySelector(".caption");
+let trashPicture = document.querySelector(".trash_picture");
+let start = document.querySelector(".button_begin");
+let dumpster = document.querySelectorAll(".dumpster");
+let trashList;
+let trash;
 
-// function startGame() {
-//   // обнуляем при каждом старте счетчики
-//   winPoint = 0;
-//   losePoint = 0;
-//   upPoint.innerHTML = winPoint;
-//   downPoint.innerHTML = losePoint;
-//   // Выводим условие задачи для пользователя
-//   headline.innerHTML = "Выбери правильный бак для сортировки мусора"; //Посмотреть как переделать Олеся
-//   trashList = trashListFresh.slice(0);
-//   // начинаем игровой цикл
-//   let rand = Math.floor(Math.random() * trashList.length);
-//   elemImg.setAttribute("src", trashList[rand].url);
-//   elemImg.setAttribute("data-type", trashList[rand].type);
-//   trashPicture.appendChild(elemImg);
-//   trash = document.querySelector(".trash_picture img");
-//   console.log("ghbdtn");
-//   trashList.splice(rand, 1);
-//   getStarted();
-// }
-// function getStarted() {
-//   let endGameElem = document.querySelectorAll(".end-game--js");
-//   endGameElem.forEach((item) => {
-//     item.classList.remove("end");
-//   });
-//   let starting = document.querySelectorAll(".go-js");
-//   starting.forEach((item) => {
-//     item.classList.toggle("active");
-//   });
-//   start.classList.add("active");
-//   dumpster.forEach((item) => {
-//     item.classList.remove("end");
-//   });
-// }
+function startGame() {
+  // обнуляем при каждом старте счетчики
+  winPoint = 0;
+  losePoint = 0;
+  upPoint.innerHTML = winPoint;
+  downPoint.innerHTML = losePoint;
+  // Выводим условие задачи для пользователя
+  headline.innerHTML = "Выбери правильный бак для сортировки мусора"; //Посмотреть как переделать Олеся
+  trashList = trashListFresh.slice(0);
+  // начинаем игровой цикл
+  let rand = Math.floor(Math.random() * trashList.length);
+  elemImg.setAttribute("src", trashList[rand].url);
+  elemImg.setAttribute("data-type", trashList[rand].type);
+  trashPicture.appendChild(elemImg);
+  trash = document.querySelector(".trash_picture img");
+  console.log("ghbdtn");
+  trashList.splice(rand, 1);
+  getStarted();
+}
+function getStarted() {
+  let endGameElem = document.querySelectorAll(".end-game--js");
+  endGameElem.forEach((item) => {
+    item.classList.remove("end");
+  });
+  let starting = document.querySelectorAll(".go-js");
+  starting.forEach((item) => {
+    item.classList.toggle("active");
+  });
+  start.classList.add("active");
+  dumpster.forEach((item) => {
+    item.classList.remove("end");
+  });
+}
 
-// function clickBug(type) {
-//   key = trash.getAttribute("data-type");
-//   if (type === key && trashList.length > 0) {
-//     winPoint++;
-//     upPoint.innerHTML = winPoint;
-//     colorPoints(true);
-//   }
-//   if (type != key && trashList.length > 0) {
-//     losePoint++;
-//     downPoint.innerHTML = losePoint;
-//     colorPoints(false);
-//   }
-//   if (trashList.length === 0) {
-//     gameOver();
-//   }
-//   gameLoop();
-// }
+function clickBug(type) {
+  key = trash.getAttribute("data-type");
+  if (type === key && trashList.length > 0) {
+    winPoint++;
+    upPoint.innerHTML = winPoint;
+    colorPoints(true);
+  }
+  if (type != key && trashList.length > 0) {
+    losePoint++;
+    downPoint.innerHTML = losePoint;
+    colorPoints(false);
+  }
+  if (trashList.length === 0) {
+    gameOver();
+  }
+  gameLoop();
+}
 
-// function gameLoop() {
-//   if (trashList.length >= 1) {
-//     let rand = Math.floor(Math.random() * trashList.length);
-//     elemImg.setAttribute("src", trashList[rand].url);
-//     elemImg.setAttribute("data-type", trashList[rand].type);
-//     trashPicture.appendChild(elemImg);
-//     trashList.splice(rand, 1);
-//   }
-// }
+function gameLoop() {
+  if (trashList.length >= 1) {
+    let rand = Math.floor(Math.random() * trashList.length);
+    elemImg.setAttribute("src", trashList[rand].url);
+    elemImg.setAttribute("data-type", trashList[rand].type);
+    trashPicture.appendChild(elemImg);
+    trashList.splice(rand, 1);
+  }
+}
 
-// function colorPoints(boolean) {
-//   let button = document.querySelector(".containers");
+function colorPoints(boolean) {
+  let button = document.querySelector(".containers");
 
-//   button.addEventListener("click", () => {
-//     button.classList.toggle("active");
-//     setTimeout(() => button.classList.add("active"), 0);
-//   });
+  button.addEventListener("click", () => {
+    button.classList.toggle("active");
+    setTimeout(() => button.classList.add("active"), 0);
+  });
 
-//   if (boolean) {
-//     yes.classList.add("active");
-//     no.classList.remove("active");
-//   } else {
-//     no.classList.add("active");
-//     yes.classList.remove("active");
-//   }
-// }
+  if (boolean) {
+    yes.classList.add("active");
+    no.classList.remove("active");
+  } else {
+    no.classList.add("active");
+    yes.classList.remove("active");
+  }
+}
 
-// function gameOver() {
-//   getStarted();
-//   headline.innerHTML =
-//     "Отлично! Количество набранных очков: " +
-//     winPoint +
-//     " из " +
-//     trashListFresh.length +
-//     "!";
-//   let endGameElem = document.querySelectorAll(".end-game--js");
-//   endGameElem.forEach((item) => {
-//     item.classList.add("end");
-//   });
-// }
+function gameOver() {
+  getStarted();
+  headline.innerHTML =
+    "Отлично! Количество набранных очков: " +
+    winPoint +
+    " из " +
+    trashListFresh.length +
+    "!";
+  let endGameElem = document.querySelectorAll(".end-game--js");
+  endGameElem.forEach((item) => {
+    item.classList.add("end");
+  });
+}
 </script>
 
 <template>
