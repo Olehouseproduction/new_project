@@ -1,20 +1,21 @@
 <script setup>
 import Header from "./ui-components/Header.vue";
+import TrashContainers from "./task-components/Subtask5GameTrashContainer.vue";
 // оптимизация
 // конфиг переменных которые используются для работы приложения
-let trashListFresh = [
-  { type: "household", url: "image/garbage/apple.png" },
-  { type: "dangerous", url: "image/garbage/battery.png" },
-  { type: "recyclables", url: "image/garbage/glass.png" },
-  { type: "recyclables", url: "image/garbage/paper.png" },
-  { type: "mixed", url: "image/garbage/boots.png" },
-  { type: "mixed", url: "image/garbage/cottonBuds.png" },
-  { type: "mixed", url: "image/garbage/glue.png" },
-  { type: "recyclables", url: "image/garbage/milkCarton.png" },
-  { type: "recyclables", url: "image/garbage/tin.png" },
-  { type: "mixed", url: "image/garbage/tube.png" },
-  { type: "mixed", url: "image/garbage/patch.png" },
-];
+// let trashListFresh = [
+//   { type: "household", url: "image/garbage/apple.png" },
+//   { type: "dangerous", url: "image/garbage/battery.png" },
+//   { type: "recyclables", url: "image/garbage/glass.png" },
+//   { type: "recyclables", url: "image/garbage/paper.png" },
+//   { type: "mixed", url: "image/garbage/boots.png" },
+//   { type: "mixed", url: "image/garbage/cottonBuds.png" },
+//   { type: "mixed", url: "image/garbage/glue.png" },
+//   { type: "recyclables", url: "image/garbage/milkCarton.png" },
+//   { type: "recyclables", url: "image/garbage/tin.png" },
+//   { type: "mixed", url: "image/garbage/tube.png" },
+//   { type: "mixed", url: "image/garbage/patch.png" },
+// ];
 
 let elemImg = document.createElement("img");
 elemImg.classList.add("go-js");
@@ -65,33 +66,33 @@ function getStarted() {
   });
 }
 
-function clickBug(type) {
-  key = trash.getAttribute("data-type");
-  if (type === key && trashList.length > 0) {
-    winPoint++;
-    upPoint.innerHTML = winPoint;
-    colorPoints(true);
-  }
-  if (type != key && trashList.length > 0) {
-    losePoint++;
-    downPoint.innerHTML = losePoint;
-    colorPoints(false);
-  }
-  if (trashList.length === 0) {
-    gameOver();
-  }
-  gameLoop();
-}
+// function clickBug(type) {
+//   key = trash.getAttribute("data-type");
+//   if (type === key && trashList.length > 0) {
+//     winPoint++;
+//     upPoint.innerHTML = winPoint;
+//     colorPoints(true);
+//   }
+//   if (type != key && trashList.length > 0) {
+//     losePoint++;
+//     downPoint.innerHTML = losePoint;
+//     colorPoints(false);
+//   }
+//   if (trashList.length === 0) {
+//     gameOver();
+//   }
+//   gameLoop();
+// }
 
-function gameLoop() {
-  if (trashList.length >= 1) {
-    let rand = Math.floor(Math.random() * trashList.length);
-    elemImg.setAttribute("src", trashList[rand].url);
-    elemImg.setAttribute("data-type", trashList[rand].type);
-    trashPicture.appendChild(elemImg);
-    trashList.splice(rand, 1);
-  }
-}
+// function gameLoop() {
+//   if (trashList.length >= 1) {
+//     let rand = Math.floor(Math.random() * trashList.length);
+//     elemImg.setAttribute("src", trashList[rand].url);
+//     elemImg.setAttribute("data-type", trashList[rand].type);
+//     trashPicture.appendChild(elemImg);
+//     trashList.splice(rand, 1);
+//   }
+// }
 
 function colorPoints(boolean) {
   let button = document.querySelector(".containers");
@@ -158,96 +159,12 @@ function gameOver() {
           </svg>
         </div> -->
           <div class="trash_picture go-js"></div>
-          <div class="counter go-js end-game--js">
-            <div class="win">
-              <img src="../assets/image/game/ok.png" alt="check_mark" />
-              <p class="win-js" v-text="winPoint"></p>
-              <!-- <span class="win-js">0</span> -->
-            </div>
-            <div class="lose">
-              <img src="../assets/image/game/no.png" alt="cross_mark" />
-              <p class="lose-js" v-text="losePoint"></p>
-              <!-- <span class="lose-js">0</span> -->
-            </div>
-          </div>
           <div class="again end-game--js">
             <img src="../assets/image/game/reload.png" alt="arrow_clockwise" />
             <button @click="startGame()" class="button_again">Ещё раз</button>
           </div>
         </section>
-        <section class="containers">
-          <div
-            id="yellow"
-            class="dumpster end-game--js"
-            data-type="recyclables"
-            @click="clickBug('recyclables')">
-            <p class="dumpster-text dumpster-text--yellow">Вторсырье</p>
-
-            <div class="wasteboxs">
-              <img
-                class="dumpster-garbage"
-                src="../assets/image/game/buck_top/wastebox_yellow.png"
-                alt="wastebox_yellow" />
-              <img
-                class="dumpster-cap"
-                src="../assets/image/game/buck_top/wastetop_yellow.png"
-                alt="wastetop_yellow" />
-            </div>
-          </div>
-          <div
-            id="green"
-            class="dumpster end-game--js"
-            data-type="mixed"
-            @click="clickBug('mixed')">
-            <p class="dumpster-text dumpster-text--green">Смешанные</p>
-            <div class="wasteboxs">
-              <img
-                class="dumpster-garbage"
-                src="../assets/image/game/buck_top/wastebox_green.png"
-                alt="wastebox_green" />
-              <img
-                class="dumpster-cap"
-                src="../assets/image/game/buck_top/wastetop_green.png"
-                alt="wastetop_green" />
-            </div>
-          </div>
-          <div
-            id="blue"
-            class="dumpster end-game--js"
-            data-type="household"
-            @click="clickBug('household')">
-            <p class="dumpster-text dumpster-text--blue">Бытовые</p>
-
-            <div class="wasteboxs">
-              <img
-                class="dumpster-garbage"
-                src="../assets/image/game/buck_top/wastebox_blue.png"
-                alt="wastebox_blue" />
-              <img
-                class="dumpster-cap"
-                src="../assets/image/game/buck_top/wastetop_blue.png"
-                alt="wastetop_blue" />
-            </div>
-          </div>
-          <div
-            id="red"
-            class="dumpster end-game--js"
-            data-type="dangerous"
-            @click="clickBug('dangerous')">
-            <p class="dumpster-text dumpster-text--red">Опасные</p>
-
-            <div class="wasteboxs">
-              <img
-                class="dumpster-garbage"
-                src="../assets/image/game/buck_top/wastebox_red.png"
-                alt="wastebox_red" />
-              <img
-                class="dumpster-cap"
-                src="../assets/image/game/buck_top/wastetop_red.png"
-                alt="wastetop_red" />
-            </div>
-          </div>
-        </section>
+        <TrashContainers />
       </div>
     </div>
   </div>
@@ -257,19 +174,13 @@ function gameOver() {
 @import "../styles/mixin.scss";
 .workspace--task5 {
   display: flex;
-  // font-family: "Roboto";
   background: url("../assets/image/game/recycling-concept-top-view.jpg") 50%
     100%/100% auto no-repeat;
   box-sizing: border-box;
-  max-height: 85%;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  // background-image: url("../assets/image/game/recycling-concept-top-view.jpg");
-  // background-position: 50% 100%;
-  // background-size: 100% auto;
-  // background-repeat: no-repeat;
-  @include size(82%, 82%);
+  @include size(80%);
 }
 
 .wrapper {
@@ -277,21 +188,11 @@ function gameOver() {
   margin-top: 10vh;
 }
 
-.containers {
-  padding-top: 3vh;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.dumpster-text {
-  margin: 50px auto;
-}
-
 .panel {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 28vh;
+  height: 25vh;
 }
 
 .caption {
@@ -299,62 +200,6 @@ function gameOver() {
   font-weight: bolder;
   text-align: center;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
-  margin-bottom: 5vh;
-}
-
-#yellow .dumpster-text {
-  background-color: #ffad00;
-}
-
-#green .dumpster-text {
-  background-color: #6ec100;
-}
-
-#blue .dumpster-text {
-  background-color: #0060f2;
-}
-
-#red .dumpster-text {
-  background-color: red;
-}
-
-.label {
-  display: flex;
-  justify-content: center;
-}
-
-.dumpster-text {
-  border-radius: 40px;
-  padding: 10px;
-  color: white;
-  font-weight: bold;
-  font-size: 100%;
-  letter-spacing: 0.2px;
-  text-align: center;
-  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
-  margin-bottom: 3vh;
-  width: max-content;
-}
-
-.counter {
-  opacity: 0;
-  display: flex;
-  width: 500px;
-  justify-content: space-between;
-  transition: all 350ms ease-in;
-}
-
-.counter.active {
-  opacity: 1;
-}
-
-.win span,
-.lose span {
-  padding: 10px;
-  color: white;
-  font-weight: bold;
-  font-size: 1.5em;
-  text-align: center;
 }
 
 .win,
@@ -377,12 +222,6 @@ function gameOver() {
   width: 80px;
 }
 
-.dumpster-garbage {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 .timer-svg {
   width: 350px;
   object-fit: contain;
@@ -403,7 +242,6 @@ function gameOver() {
   align-items: center;
   justify-content: center;
   position: absolute;
-
   width: 200px;
   height: 200px;
   border-radius: 100px;
@@ -458,26 +296,6 @@ function gameOver() {
 
 .lose {
   background-color: #e5017c;
-}
-
-.dumpster {
-  width: 23%;
-  position: sticky;
-  cursor: pointer;
-}
-
-.dumpster-cap {
-  width: 76%;
-  object-fit: contain;
-  position: absolute;
-  left: 1.3vw;
-  top: 10.5vh;
-  z-index: -1;
-  transition: top 450ms ease-in;
-}
-
-.dumpster:hover .wasteboxs .dumpster-cap {
-  top: 2vh;
 }
 
 .button_begin {
