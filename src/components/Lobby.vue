@@ -9,18 +9,14 @@ const links = [
   { url: "/Task1", name: "Задание 1" },
   { url: "/Task2", name: "Задание 2" },
   { url: "/Task3", name: "Задание 3" },
-  { url: "/Task4", name: "Задание 4" },
-  { url: "/Task5", name: "Задание 5" },
+  // { url: "/Task4", name: "Задание 4" },
+  // { url: "/Task5", name: "Задание 5" },
 ];
 </script>
 
 <template>
   <div class="main">
-    <button_link
-      v-for="(link, i) in links"
-      :key="'link' + i"
-      :to="link.url"
-      :name="link.name" />
+    <button_link v-for="(link, i) in links" :key="'link' + i" :to="link.url" :name="link.name" />
     <!-- Указываем пропсы. Чем они являются? 
     :to="link.url" Из массива из каждого элемента, который link, мы брали ключ url и отправляли его в :to. Также с name
     -->
@@ -42,25 +38,22 @@ const links = [
 
 <style lang="scss" scoped>
 @import "src/styles/mixin.scss";
+
 .main {
-  background-image: -webkit-gradient(
-      linear,
+  background-image: -webkit-gradient(linear,
       left top,
       left bottom,
       from(hsla(0, 0%, 95.3%, 0.94)),
-      to(hsla(0, 0%, 95.3%, 0.94))
-    ),
+      to(hsla(0, 0%, 95.3%, 0.94))),
     url(https://uploads-ssl.webflow.com/6359140b3878a7a73023f955/635934446d2865655d814bb0_noise.webp),
     -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#f3f3f3));
 
   object-fit: contain;
   @include size(100vw, 100vh);
   @include flex(center, center, column);
-  background-image: linear-gradient(
-      180deg,
+  background-image: linear-gradient(180deg,
       hsla(0, 0%, 95.3%, 0.94),
-      hsla(0, 0%, 95.3%, 0.94)
-    ),
+      hsla(0, 0%, 95.3%, 0.94)),
     url(https://uploads-ssl.webflow.com/6359140b3878a7a73023f955/635934446d2865655d814bb0_noise.webp),
     linear-gradient(180deg, #f3f3f3, #f3f3f3);
 }

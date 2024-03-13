@@ -25,14 +25,14 @@ const routes = [
     component: () => import("../components/Task3.vue"),
     meta: {},
   },
+  // {
+  //   path: "/Task4",
+  //   name: "Props",
+  //   component: () => import("../components/Task4.vue"),
+  //   meta: {},
+  // },
   {
     path: "/Task4",
-    name: "Props",
-    component: () => import("../components/Task4.vue"),
-    meta: {},
-  },
-  {
-    path: "/Task5",
     name: "Game",
     component: () => import("../components/Task5.vue"),
     meta: {},
